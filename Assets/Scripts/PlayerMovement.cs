@@ -38,11 +38,8 @@ public class PlayerMovement : MonoBehaviour
         
         if (horizontal > 0)
         {
-            //this.transform.rotation = new Quaternion(0, 0, -45, 0);
             this.transform.rotation = Quaternion.identity;
             this.transform.Rotate(0, 0, -90);
-            Debug.Log("höger");
-            //this.transform.localScale = new Vector3(-1, 1, 1); // Makes the dude turn right when walking right
             isWalking = true;
         }
         // Turn left
@@ -50,13 +47,13 @@ public class PlayerMovement : MonoBehaviour
         {
             this.transform.rotation = Quaternion.identity;
             this.transform.Rotate(0, 0, 90);
-            Debug.Log("vänster");
-
-            //this.transform.rotation = new Quaternion(0, 0, 45, 0);
-
-            //this.transform.localScale = new Vector3(1, 1, 1); // Makes the dude turn left when walking left
             isWalking = true;
         }
+        // Up
+        
+        
+        // Down
+        
         // Standing still
         //else
         //{
