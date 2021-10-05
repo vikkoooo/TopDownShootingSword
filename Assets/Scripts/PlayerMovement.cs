@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Update()
 	{
+		Debug.Log(isWalking);
 	}
 
 	private void FixedUpdate()
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 		float vertical = Input.GetAxisRaw("Vertical");
 		body.velocity = new Vector2(horizontal * speed, vertical * speed);
 
+		// Turn right
 		if (horizontal > 0)
 		{
 			this.transform.rotation = Quaternion.identity;
@@ -48,23 +50,24 @@ public class PlayerMovement : MonoBehaviour
 			this.transform.Rotate(0, 0, 90);
 			isWalking = true;
 		}
-		// Up
+		// Turn north
 		else if (vertical > 0)
 		{
+			this.transform.rotation = Quaternion.identity;
+			this.transform.Rotate(0, 0, 0);
+			isWalking = true;
 		}
-
-		// Down
+		// Turn south
 		else if (vertical < 0)
 		{
+			this.transform.rotation = Quaternion.identity;
+			this.transform.Rotate(0, 0, -180);
+			isWalking = true;
 		}
-
-
 		// Standing still
-		//else
-		//{
-		// To reset the wobble when we stop walking, making the wizard stand with both feet on ground
-		//    this.transform.rotation = Quaternion.identity; // .identity means "no rotation"
-		//    isWalking = false;
-		//}  
+		else
+		{
+		    isWalking = false;
+		}  
 	}
 }
