@@ -14,6 +14,7 @@ public class TriggerSlider : MonoBehaviour
     }
     public void SliderPlay()
     {
+        slider.value = slider.minValue;
         StartCoroutine(LerpSlider());
     }
     private IEnumerator LerpSlider()
