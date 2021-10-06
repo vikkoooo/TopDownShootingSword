@@ -7,6 +7,10 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
+	// To Roll
+	private bool isRolling;
+	
+	
 	// To move the body
 	private float speed = 10f;
 	private Rigidbody2D body; 
@@ -30,13 +34,18 @@ public class PlayerMovement : MonoBehaviour
 	{
 		horizontal = Input.GetAxisRaw("Horizontal");
 		vertical = Input.GetAxisRaw("Vertical");
-		
+		roll();
 		// For mouse movement
 		mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+		
+		
+		
 	}
 
 	private void FixedUpdate()
-	{
+	{	
+		//dont want move() and roll() to interfere with eachother
+		if(!isRolling)
 		Move(); // Check for movement. Move functions always in FixedUpdate or we need to use * deltaTime
 
 		// For mouse movement. This gives us a new vector that points from our player to our mouse position
@@ -88,4 +97,17 @@ public class PlayerMovement : MonoBehaviour
 		}  
 		*/
 	}
+
+	void roll()
+	{
+		if (Input.GetKeyDown("space"))
+		{
+			isRolling = true;
+			body.AddForce(transform.up * 5000);
+		}
+
+		isRolling = false;
+	}
+
+
 }
