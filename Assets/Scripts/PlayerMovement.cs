@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	// To Roll
 	private bool isRolling;
-	
+	private KeyCode lastKeyPushed;
 	
 	// To move the body
 	public float speed = 10f;
@@ -101,12 +101,89 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void roll()
-	{
+	{	
+		if (Input.GetKeyDown(KeyCode.W))
+		{
+			isWalking = true;
+			lastKeyPushed = KeyCode.W;
+		}
+		
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			isWalking = true;
+			lastKeyPushed = KeyCode.A;
+		}
+		
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+			isWalking = true;
+			lastKeyPushed = KeyCode.S;
+		}
+		
+		if (Input.GetKeyDown(KeyCode.D))
+		{
+			isWalking = true;
+			lastKeyPushed = KeyCode.D;
+		}
+		
 		if (Input.GetKeyDown("space"))
 		{
-			isRolling = true;
-			body.AddForce(transform.up * dashForce);
+			if (isWalking == true)
+			{
+				isRolling = true;
+				
+				if (lastKeyPushed == KeyCode.W)
+				{
+					
+					
+					body.AddForce(Vector2.up * dashForce);
+				}
+				else if (lastKeyPushed == KeyCode.A)
+				{
+					
+					
+					body.AddForce(Vector2.left * dashForce);
+				}
+				else if (lastKeyPushed == KeyCode.S)
+				{
+					
+					
+					body.AddForce(Vector2.down * dashForce);
+				}
+				
+				else if (lastKeyPushed == KeyCode.D)
+				{
+					
+					
+					body.AddForce(Vector2.right * dashForce);
+				}
+				
+				
+				
+			}
 		}
 		isRolling = false;
+
+		if (Input.GetKeyUp(KeyCode.W))
+		{
+			isWalking = false;
+
+		}
+		if (Input.GetKeyUp(KeyCode.A))
+		{
+			isWalking = false;
+
+		}
+		if (Input.GetKeyUp(KeyCode.S))
+		{
+			isWalking = false;
+
+		}
+		if (Input.GetKeyUp(KeyCode.D))
+		{
+			isWalking = false;
+
+		}
+		
 	}
 }
