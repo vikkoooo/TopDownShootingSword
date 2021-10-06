@@ -16,6 +16,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSword.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.11/Editor/VisualStudioEditor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1z4qby2xT0K2reQ3deZ29qUY6nr" />
@@ -68,7 +70,7 @@
       <workItem from="1633464744304" duration="7107000" />
       <workItem from="1633506691816" duration="1911000" />
       <workItem from="1633509185484" duration="629000" />
-      <workItem from="1633518009080" duration="2696000" />
+      <workItem from="1633518009080" duration="7010000" />
     </task>
     <servers />
   </component>
