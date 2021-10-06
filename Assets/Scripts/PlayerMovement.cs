@@ -12,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
 	
 	
 	// To move the body
-	private float speed = 10f;
+	public float speed = 10f;
 	private Rigidbody2D body; 
 	private float horizontal;
 	private float vertical;
+
+	public float dashForce = 5000f;
 	
 	// For the mouse movement
 	private Camera cam;
@@ -103,11 +105,8 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetKeyDown("space"))
 		{
 			isRolling = true;
-			body.AddForce(transform.up * 5000);
+			body.AddForce(transform.up * dashForce);
 		}
-
 		isRolling = false;
 	}
-
-
 }
