@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4141333129399536439}
-  - component: {fileID: 4141333129399536436}
+  - component: {fileID: 8752635624628489409}
+  - component: {fileID: 748200596504144812}
   m_Layer: 5
   m_Name: NoteToHit
   m_TagString: Untagged
@@ -37,7 +38,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4141333129399536436
+--- !u!58 &8752635624628489409
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141333129399536438}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!114 &748200596504144812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,10 +63,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4141333129399536438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c5a8319bace4ff4a923b2b598055fa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 59b20d8cb29b62448965181ef5db1721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
 --- !u!1 &4141333130995920870
 GameObject:
   m_ObjectHideFlags: 0
