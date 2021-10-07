@@ -14,14 +14,10 @@ public class Note : MonoBehaviour
     {
         controller = GetComponent<RythmBarController>();
     }
-
-    private void Update()
-    {
-        correctInput = Input.GetKeyDown("fire1");
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //feedback to player, enter note
         Debug.Log("Entered trigger");
     }
     private void OnTriggerStay2D(Collider2D other)

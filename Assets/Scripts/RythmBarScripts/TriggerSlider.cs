@@ -8,7 +8,12 @@ public class TriggerSlider : MonoBehaviour
 {
     public Slider slider;
     public float loopDuration = 3f;
-    
+
+    private void Start()
+    {
+        slider = GetComponent<Slider>();
+    }
+
     public void SliderPlay()
     {
         StartCoroutine(LerpSlider());

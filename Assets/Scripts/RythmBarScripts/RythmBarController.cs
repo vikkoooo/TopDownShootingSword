@@ -6,22 +6,30 @@ using UnityEngine.UI;
 
 public class RythmBarController : MonoBehaviour
 {
-    private TriggerSlider slider;
-    private InstanceNotes instanceNotes;
+    public GameObject rythmBarController;
+    TriggerSlider sliderToPlay;
+    public InstanceNotes dotSpawner;
+    
     public int allowedMisses = 3;
     
     [HideInInspector] public int numberOfHits;
     [HideInInspector] public int numberOfMisses;
+    
     private int numberToHit;
     
     private void Start()
     {
-        instanceNotes = GetComponent<InstanceNotes>();
-        numberToHit = instanceNotes.numberToCreate;
+        // dotSpawner = rythmBarController.GetComponent<InstanceNotes>();
+        sliderToPlay = rythmBarController.GetComponent<TriggerSlider>();
+        
         numberOfHits = 0;
         numberOfMisses = 0;
-        slider.SliderPlay();
+        numberToHit = dotSpawner.numberToCreate;
+        
+        sliderToPlay.SliderPlay();
+        dotSpawner.InstanceObjects();
     }
+    
     private void Update()
     {
         if (numberOfHits == numberToHit)
