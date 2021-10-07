@@ -723,9 +723,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936271572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TriggerSlider, Assembly-CSharp
-        m_MethodName: SliderPlay
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1070,8 +1070,8 @@ GameObject:
   - component: {fileID: 1936271571}
   - component: {fileID: 1936271573}
   - component: {fileID: 1936271574}
-  - component: {fileID: 1936271572}
   - component: {fileID: 1936271575}
+  - component: {fileID: 1936271572}
   m_Layer: 5
   m_Name: RythmBar
   m_TagString: Untagged
@@ -1108,11 +1108,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936271570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2bc14e2c9000ba46881883aca2859a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 97034ac2980da03459b5a99944c9f4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1936271573}
-  loopDuration: 2
+  prefab: {fileID: 0}
+  instanceOn: {fileID: 0}
+  numberToCreate: 0
 --- !u!114 &1936271573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,12 +1189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936271570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f379bc779d61db45a127f11cebe0a3d, type: 3}
+  m_Script: {fileID: 11500000, guid: c2a8c894562d16d45b110a239b9b177b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4141333129399536438, guid: 0389d4b440191ff4c8a83cf69d7a27d5, type: 3}
-  instanceOn: {fileID: 1582606935}
-  numberToCreate: 6
+  slider: {fileID: 0}
+  loopDuration: 3
 --- !u!1 &2072513813
 GameObject:
   m_ObjectHideFlags: 0
