@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class CheckSliderValue : MonoBehaviour
 {
-    public Slider slider;
-    private float position;
-
-    private void Update()
-    {
-        Debug.Log(slider.value);
-    }
+    // public Slider slider;
+    // private float position;
+    //
+    // private void Update()
+    // {
+    //     Debug.Log(slider.value);
+    // }
 }
