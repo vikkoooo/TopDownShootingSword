@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemies
+  - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemies
   - Water
   - UI
   - 

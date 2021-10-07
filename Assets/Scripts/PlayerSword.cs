@@ -1,52 +1,65 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSword : MonoBehaviour
 {
-	private float timeSinceLastAttack = 0f;
-	public float timeBetweenAttack = 0.1f;
+	// Settings
+	private float timeSinceLastAttack;
+	private float timeBetweenAttack = 2.4f; // How much should you be able to spam? Animation needs to finish almost?
+	private float attackDuration = 2.5f; // For how long will the trigger be visible? Prefer to sync with animation
 
-	public Transform attackStartPos;
-	public float attackRange = 0.5f;
-	public int damage = 25;
+	public GameObject collider; // The collider used
+	private int damage = 1;
 
-	// Update is called once per frame
-	void Update()
+	void Start()
+	{
+		timeSinceLastAttack = timeBetweenAttack; // The player dont have to wait for the first attack
+		collider.SetActive(false); // Deactivate attack as default
+	}
+
+	void FixedUpdate()
 	{
 		// Count how long it was since the player attacked
-		timeSinceLastAttack -= Time.deltaTime;
+		timeSinceLastAttack += Time.deltaTime;
+	}
 
-		// Player attemts to attack
-		if (Input.GetButton("Fire1"))
+	void Update()
+	{
+		// Player attempts to attack
+		if (Input.GetButtonDown("Fire1") && timeSinceLastAttack >= timeBetweenAttack)
 		{
-			// Check that he actually is allowed to can attack
-			if (timeSinceLastAttack <= 0)
-			{
-				// Start the attack
-				{
-					Debug.Log("attack körs");
-					Collider2D[] enemiesToDamage =
-							Physics2D.OverlapCircleAll(attackStartPos.position, attackRange);
+			collider.SetActive(true); // Activate the collider
+			Debug.Log("Collider activated");
 
-					// Check for hit
-					for (int i = 0; i < enemiesToDamage.Length; i++)
-					{
-						enemiesToDamage[i].GetComponent<Enemy>().health -= damage;
-						Debug.Log("träff");
-					}
-				}
-				// Reset time between attack
-				timeSinceLastAttack = timeBetweenAttack;
-			}
+			timeSinceLastAttack = 0f;
+			StartCoroutine(CheckMiss(attackDuration)); // Start timer to deactivate the collider in case of miss
 		}
 	}
 
-
-	private void OnDrawGizmosSelected()
+	private IEnumerator CheckMiss(float duration)
 	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(attackStartPos.position, attackRange);
+		// Wait for the attack duration
+		yield return new WaitForSeconds(duration);
+
+		// Consider miss if collider is active
+		if (collider.activeSelf)
+		{
+			collider.SetActive(false);
+			Debug.Log("Miss");
+		}
+	}
+
+	// This event is called when unity detects a collision
+	private void OnTriggerEnter2D(Collider2D collidedObject)
+	{
+		if (collidedObject.CompareTag("Enemy"))
+		{
+			collidedObject.GetComponent<Enemy>().health -= damage;
+			collider.SetActive(false);
+			Debug.Log("Hit");
+
+			// Reset time between attack
+			timeSinceLastAttack = 0f;
+		}
 	}
 }
