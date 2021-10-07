@@ -9,7 +9,7 @@ public class PlayerSword : MonoBehaviour
 	private float attackDuration = 2.5f; // For how long will the trigger be visible? Prefer to sync with animation
 
 	public GameObject collider; // The collider used
-	private int damage = 1;
+	private int damage = 25;
 
 	void Start()
 	{
@@ -29,7 +29,7 @@ public class PlayerSword : MonoBehaviour
 		if (Input.GetButtonDown("Fire1") && timeSinceLastAttack >= timeBetweenAttack)
 		{
 			collider.SetActive(true); // Activate the collider
-			Debug.Log("Collider activated");
+			Debug.Log("Weapon swing started");
 
 			timeSinceLastAttack = 0f;
 			StartCoroutine(CheckMiss(attackDuration)); // Start timer to deactivate the collider in case of miss
@@ -45,18 +45,18 @@ public class PlayerSword : MonoBehaviour
 		if (collider.activeSelf)
 		{
 			collider.SetActive(false);
-			Debug.Log("Miss");
+			Debug.Log("Weapon swing missed");
 		}
 	}
 
 	// This event is called when unity detects a collision
 	private void OnTriggerEnter2D(Collider2D collidedObject)
-	{
+	{	
 		if (collidedObject.CompareTag("Enemy"))
 		{
-			collidedObject.GetComponent<Enemy>().health -= damage;
+			collidedObject.GetComponent<Enemy>().TakeDamage(damage);
 			collider.SetActive(false);
-			Debug.Log("Hit");
+			Debug.Log("Weapon swing hit. Damage to monster");
 
 			// Reset time between attack
 			timeSinceLastAttack = 0f;

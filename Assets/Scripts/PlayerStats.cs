@@ -6,30 +6,29 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-
-    public int health;
-    public int startHealth = 3;
-    
+    // Health currently set to 4.
+    private int health = 4;
+    // This means the array of hearts should contain 4 objects and should be of size 4
     public Image[] hearts;
+    
+    // If we wanna show full or empty hearts we can swap it, otherwise we can just remove
     public Sprite fullHearts;
     public Sprite emptyHearts;
-    
-    
+
     void Start()
     {
-        SetHealth(startHealth);
+        CheckHealth(); // Updates UI and checks for death
     }
-
-    private void Update()
+    
+    public void TakeDamage(int amount)
     {
+        health -= amount;
         
+        CheckHealth(); // Updates UI and checks for death
     }
 
-    public void SetHealth(int newHealth)
+    private void CheckHealth()
     {
-        // Updates health to the new value. Can modify it to subtract or add or something if we want
-        health = newHealth;
-
         // In hase of health higher than maximum health possible
         // Sets the health to maximum number of hearts, in other words, the size of the array.
         if (health > hearts.Length)
@@ -39,7 +38,7 @@ public class PlayerStats : MonoBehaviour
         // In case if player should die, health reaches 0 or below
         else if (health <= 0)
         {
-            Debug.Log("YOU DIEDED!");
+            Debug.Log("Player died");
             health = 0; // Set to 0 so the update hearts thing below gets to update to all empty
         }
         
@@ -55,8 +54,8 @@ public class PlayerStats : MonoBehaviour
             {
                 hearts[i].enabled = true; // or = false if we dont wanna show empty
                 hearts[i].sprite = emptyHearts;
-
             }
         }
     }
+    
 }
