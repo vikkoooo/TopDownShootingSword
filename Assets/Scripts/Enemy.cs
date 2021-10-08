@@ -11,13 +11,12 @@ public class Enemy : MonoBehaviour
 
     // Movement
     private Rigidbody2D body;
-    private float speed = 0.5f;
+    private float moveSpeed = 0.5f;
     private List<Vector2> directions;
     
     private void Start()
-    {
+    { 
         body = GetComponent<Rigidbody2D>();
-
         // Randomize direction on start
         directions = new List<Vector2>();
         directions.Add(Vector2.up);
@@ -26,20 +25,17 @@ public class Enemy : MonoBehaviour
         directions.Add(Vector2.right);
 
         int index = Random.Range(0, 4);
-        body.velocity = directions[index] * speed;
+        body.velocity = directions[index] * moveSpeed;
     }
-    
     public void TakeDamage(int amount)
     {
         health -= amount;
-        
         if (health <= 0)
         {
             Destroy(gameObject);
             Debug.Log("Monster died");
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
         if (collidedObject.gameObject.CompareTag("Player"))
@@ -48,6 +44,4 @@ public class Enemy : MonoBehaviour
             collidedObject.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         }    
     }
-
-
 }

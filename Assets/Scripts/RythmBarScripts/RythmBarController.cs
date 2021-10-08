@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using RythmBarScripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class RythmBarController : MonoBehaviour
 {
     public GameObject rythmBarController;
     TriggerSlider sliderToPlay;
-    public InstanceNotes dotSpawner;
+    public InstancePrefab dotSpawner;
     
     public int allowedMisses = 3;
     
