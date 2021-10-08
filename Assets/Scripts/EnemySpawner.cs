@@ -4,12 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class MonsterSpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
 	public GameObject[] monsters;
-	public GameObject[] swords;
 	private int n_monsters = 4; // Number of clouds to spawn
-	private int n_swords;
 	
     public GameObject area1;
     private BoxCollider2D area1_collider;

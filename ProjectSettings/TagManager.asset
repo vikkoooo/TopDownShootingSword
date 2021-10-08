@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Weapon
+  - Sword
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - SpawnAreas
   - Water
   - UI
   - 
