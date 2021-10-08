@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerBody;
     public Animator anim;
     private PlayerSword playerSwordScript;
+    private Camera cam;
     
     [SerializeField] private float playerMoveSpeed = 10f;
     [SerializeField] private float dashForce = 5000f;
@@ -18,7 +19,8 @@ public class PlayerController : MonoBehaviour
     private float inputHorizontal;
     private float inputVertical;
     private bool inputAttack;
-    
+    private Vector2 mousePosition;
+
     private bool inputDash;
     // private bool facingRight;
     // private bool facingLeft;
@@ -33,8 +35,10 @@ public class PlayerController : MonoBehaviour
     
     private void Start()
     {
+        cam = Camera.main;
         playerBody = GetComponent<Rigidbody2D>();
         playerSwordScript = GetComponent<PlayerSword>();
+        
     }
     private void Update()
     {
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour
         inputVertical = Input.GetAxisRaw("Vertical");
         inputAttack = Input.GetButtonDown("Fire1");
         inputDash = Input.GetKeyDown("space");
+        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         
         if (inputHorizontal!= 0 || inputVertical !=0)
         {
@@ -55,19 +60,16 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
         anim.SetFloat("xInput", inputHorizontal);
         anim.SetFloat("yInput", inputVertical);
-
         
         if (inputAttack)
         {
             if (playerSwordScript.Attack())
             {
-                // anim.SetTrigger("Attack");
-                // Debug.Log("Animation start");
+                anim.SetTrigger("isAttacking");
             }
         }
         if (inputDash)
         {
-            
         }
     }
 
@@ -78,41 +80,33 @@ public class PlayerController : MonoBehaviour
     
     private void Move()
     {
+        Debug.Log("Executing move");
         playerBody.velocity = new Vector2(inputHorizontal * playerMoveSpeed, inputVertical * playerMoveSpeed);
-        // Turn Player right
-        if (inputHorizontal > 0)
-        { //Trigger animation Right
-            this.transform.rotation = Quaternion.identity;
-            this.transform.Rotate(0, 0, -90);
-            
-       
-        }
-        // Turn sprite left
-        else if (inputHorizontal < 0)
-        {
-            //Trigger animation Left
-            this.transform.rotation = Quaternion.identity;
-            this.transform.Rotate(0, 0, 90);
-            
-		
-        }
-        // Turn sprite north
-        else if (inputVertical > 0)
-        {
-            this.transform.rotation = Quaternion.identity;
-            this.transform.Rotate(0, 0, 0);
-            
-		
-        }
-        // Turn sprite south
-        else if (inputVertical < 0)
-        {
-            this.transform.rotation = Quaternion.identity;
-            this.transform.Rotate(0, 0, -180);
-            
-        }
+        
+        // // Turn Player right
+        // if (inputHorizontal > 0)
+        // { //Trigger animation Right
+        //     this.transform.rotation = Quaternion.identity;
+        //     this.transform.Rotate(0, 0, -90);
+        // }
+        // // Turn sprite left
+        // else if (inputHorizontal < 0)
+        // {
+        //     //Trigger animation Left
+        //     this.transform.rotation = Quaternion.identity;
+        //     this.transform.Rotate(0, 0, 90);
+        // }
+        // // Turn sprite north
+        // else if (inputVertical > 0)
+        // {
+        //     this.transform.rotation = Quaternion.identity;
+        //     this.transform.Rotate(0, 0, 0);
+        // }
+        // // Turn sprite south
+        // else if (inputVertical < 0)
+        // {
+        //     this.transform.rotation = Quaternion.identity;
+        //     this.transform.Rotate(0, 0, -180);
+        // }
     }
 }
-
-
-
