@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 	private float horizontal;
 	private float vertical;
 	private float knockBack = -5000f;
+	
+	//Should be moved to player-control script?
+	public Animator anim;
 
 	public float dashForce = 5000f;
 	
@@ -47,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
 		{
 			isWalking = false;
 		}
-		
 		roll();
 		
 		// For mouse movement
@@ -82,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 		{ //Trigger animation Right
 			this.transform.rotation = Quaternion.identity;
 			this.transform.Rotate(0, 0, -90);
+			
 		}
 		// Turn sprite left
 		else if (horizontal < 0)

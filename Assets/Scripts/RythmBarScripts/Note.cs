@@ -9,15 +9,29 @@ public class Note : MonoBehaviour
     private bool correctInput;
     private bool wrongInput;
     private RythmBarController controller;
-
+    
     private void Start()
     {
-        controller = GetComponent<RythmBarController>();
+        correctInput = false;
+        controller = GameObject.Find("RythmBar").GetComponent<RythmBarController>();
     }
-    
+
+    private void Update()
+    {
+        Debug.Log(correctInput);
+        correctInput = Input.GetKeyDown("space");
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //feedback to player, enter note
+        
+        if (correctInput)
+        {
+            //feedback to player, hit
+            controller.numberOfHits++;
+            Destroy(gameObject);
+        }
         Debug.Log("Entered trigger");
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -38,7 +52,8 @@ public class Note : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        controller.numberOfMisses++;
         //feedback to player, missed hit
+        controller.numberOfMisses++;
+        Debug.Log("Missed trigger");
     }
 }

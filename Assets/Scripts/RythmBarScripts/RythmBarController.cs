@@ -9,7 +9,7 @@ public class RythmBarController : MonoBehaviour
 {
     public GameObject rythmBarController;
     TriggerSlider sliderToPlay;
-    public InstanceNotes dotSpawner;
+    public InstancePrefab dotSpawner;
     
     public int allowedMisses = 3;
     
