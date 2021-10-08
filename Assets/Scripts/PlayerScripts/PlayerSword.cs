@@ -8,13 +8,13 @@ public class PlayerSword : MonoBehaviour
 	[SerializeField] private float timeBetweenAttack = 0.8f; // How much should you be able to spam? Animation needs to finish almost?
 	[SerializeField] private float attackDuration = 1f; // For how long will the trigger be visible? Prefer to sync with animation
 
-	public GameObject collider; // The collider used
+	public GameObject colliderObject; // The collider used
 	private int damage = 25;
 
 	void Start()
 	{
 		timeSinceLastAttack = timeBetweenAttack; // The player dont have to wait for the first attack
-		collider.SetActive(false); // Deactivate attack as default
+		colliderObject.SetActive(false); // Deactivate attack as default
 	}
 
 	void FixedUpdate()
@@ -28,7 +28,7 @@ public class PlayerSword : MonoBehaviour
 		// Player attempts to attack
 		if (Input.GetButtonDown("Fire1") && timeSinceLastAttack >= timeBetweenAttack)
 		{
-			collider.SetActive(true); // Activate the collider
+			colliderObject.SetActive(true); // Activate the collider
 			Debug.Log("Weapon swing started");
 
 			timeSinceLastAttack = 0f;
@@ -42,9 +42,9 @@ public class PlayerSword : MonoBehaviour
 		yield return new WaitForSeconds(duration);
 
 		// Consider miss if collider is active
-		if (collider.activeSelf)
+		if (colliderObject.activeSelf)
 		{
-			collider.SetActive(false);
+			colliderObject.SetActive(false);
 			Debug.Log("Weapon swing missed");
 		}
 	}
@@ -55,7 +55,7 @@ public class PlayerSword : MonoBehaviour
 		if (collidedObject.CompareTag("Enemy"))
 		{
 			collidedObject.GetComponent<Enemy>().TakeDamage(damage);
-			collider.SetActive(false);
+			colliderObject.SetActive(false);
 			Debug.Log("Weapon swing hit. Damage to monster");
 
 			// Reset time between attack
