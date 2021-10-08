@@ -7,25 +7,21 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    private Camera cam;
     private Rigidbody2D playerBody;
     public Animator anim;
     private PlayerSword playerSwordScript;
-    private Camera cam;
-    
+
     [SerializeField] private float playerMoveSpeed = 10f;
     [SerializeField] private float dashForce = 5000f;
     private float damageKnockBack = 5000f;
 
+    private Vector2 mousePosition;
     private float inputHorizontal;
     private float inputVertical;
     private bool inputAttack;
-    private Vector2 mousePosition;
-
     private bool inputDash;
-    // private bool facingRight;
-    // private bool facingLeft;
-    // private bool facingUp;
-    // private bool facingDown;
+
     
     public bool isWalking;
     
@@ -38,7 +34,6 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;
         playerBody = GetComponent<Rigidbody2D>();
         playerSwordScript = GetComponent<PlayerSword>();
-        
     }
     private void Update()
     {
@@ -46,6 +41,7 @@ public class PlayerController : MonoBehaviour
         inputVertical = Input.GetAxisRaw("Vertical");
         inputAttack = Input.GetButtonDown("Fire1");
         inputDash = Input.GetKeyDown("space");
+        
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         
         if (inputHorizontal!= 0 || inputVertical !=0)
@@ -60,9 +56,13 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
         anim.SetFloat("xInput", inputHorizontal);
         anim.SetFloat("yInput", inputVertical);
+        anim.SetFloat("mouseXInput", mousePosition.x);
+        anim.SetFloat("mouseYInput", mousePosition.y);
         
         if (inputAttack)
         {
+            Vector2 attackTarget = mousePosition;
+            
             if (playerSwordScript.Attack())
             {
                 anim.SetTrigger("isAttacking");

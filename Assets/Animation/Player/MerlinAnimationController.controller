@@ -117,8 +117,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: xInput
     m_Mirror: 0
-  m_BlendParameter: xInput
-  m_BlendParameterY: yInput
+  m_BlendParameter: mouseXInput
+  m_BlendParameterY: mouseYInput
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -165,7 +165,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3380297344907073655}
-    m_Position: {x: 320, y: 130, z: 0}
+    m_Position: {x: 310, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4903274001110242845}
     m_Position: {x: 310, y: 250, z: 0}
@@ -271,6 +271,18 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: isWalking
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: mouseXInput
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: mouseYInput
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

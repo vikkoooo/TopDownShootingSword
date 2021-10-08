@@ -145,25 +145,17 @@ public class PlayerMovement : MonoBehaviour
 				}
 				else if (lastKeyPushed == KeyCode.A)
 				{
-					
-					
 					body.AddForce(Vector2.left * dashForce);
 				}
 				else if (lastKeyPushed == KeyCode.S)
 				{
-					
-					
 					body.AddForce(Vector2.down * dashForce);
 				}
 				
 				else if (lastKeyPushed == KeyCode.D)
 				{
-					
-					
 					body.AddForce(Vector2.right * dashForce);
 				}
-				
-				
 				
 			}
 		}
