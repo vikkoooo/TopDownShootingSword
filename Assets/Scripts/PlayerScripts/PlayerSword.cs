@@ -5,8 +5,8 @@ public class PlayerSword : MonoBehaviour
 {
 	// Settings
 	private float timeSinceLastAttack;
-	private float timeBetweenAttack = 2.4f; // How much should you be able to spam? Animation needs to finish almost?
-	private float attackDuration = 2.5f; // For how long will the trigger be visible? Prefer to sync with animation
+	[SerializeField] private float timeBetweenAttack = 0.8f; // How much should you be able to spam? Animation needs to finish almost?
+	[SerializeField] private float attackDuration = 1f; // For how long will the trigger be visible? Prefer to sync with animation
 
 	public GameObject collider; // The collider used
 	private int damage = 25;

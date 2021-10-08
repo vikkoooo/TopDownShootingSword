@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     // If we wanna show full or empty hearts we can swap it, otherwise we can just remove
     public Sprite fullHearts;
     public Sprite emptyHearts;
-
+    
     void Start()
     {
         CheckHealth(); // Updates UI and checks for death
@@ -23,7 +23,6 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
-        
         CheckHealth(); // Updates UI and checks for death
     }
 
@@ -38,6 +37,8 @@ public class PlayerStats : MonoBehaviour
         // In case if player should die, health reaches 0 or below
         else if (health <= 0)
         {
+            
+            PlayerDied();
             Debug.Log("Player died");
             health = 0; // Set to 0 so the update hearts thing below gets to update to all empty
         }
@@ -57,5 +58,11 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
-    
+
+    private void PlayerDied()
+    {
+        Destroy(gameObject);
+        //Display highscore?
+        //
+    }
 }

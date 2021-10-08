@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4141333129399536438, guid: 3c7e70e8182e3db4880916f748bfadc4, type: 3}
   instanceOn: {fileID: 205836480}
-  numberToCreate: 4
+  numberToCreate: 3
 --- !u!1 &375406149
 GameObject:
   m_ObjectHideFlags: 0
