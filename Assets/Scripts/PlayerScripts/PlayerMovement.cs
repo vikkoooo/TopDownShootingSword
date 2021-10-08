@@ -68,12 +68,7 @@ public class PlayerMovement : MonoBehaviour
 		float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f; // 90 degree offset here depending on how sprite looks
 		/*body.rotation = angle; 	// Set the new rotation*/
 	}
-
-	public void Knockback()
-	{
-		Debug.Log("pushback");
-		body.AddForce(new Vector2(horizontal, vertical) * knockBack, ForceMode2D.Impulse);
-	}
+	
 	
 	//Basic movement script along the x and y axis
 	private void Move()
