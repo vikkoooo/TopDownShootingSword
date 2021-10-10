@@ -854,6 +854,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1161315087, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7622387739909162030, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -918,6 +922,10 @@ PrefabInstance:
       propertyPath: hearts.Array.data[3]
       value: 
       objectReference: {fileID: 1738394403}
+    - target: {fileID: 7622387740575873134, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
 --- !u!1 &1738394401
