@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     private bool inputAttack;
     private bool inputDash;
 
-    
     public bool isWalking;
     
     // To Roll
@@ -42,7 +41,9 @@ public class PlayerController : MonoBehaviour
         inputAttack = Input.GetButtonDown("Fire1");
         inputDash = Input.GetKeyDown("space");
         
-        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = Input.mousePosition;
+        mousePosition.x -= Screen.width/2;
+        mousePosition.y -= Screen.height/2;
         
         if (inputHorizontal!= 0 || inputVertical !=0)
         {
@@ -83,30 +84,5 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Executing move");
         playerBody.velocity = new Vector2(inputHorizontal * playerMoveSpeed, inputVertical * playerMoveSpeed);
         
-        // // Turn Player right
-        // if (inputHorizontal > 0)
-        // { //Trigger animation Right
-        //     this.transform.rotation = Quaternion.identity;
-        //     this.transform.Rotate(0, 0, -90);
-        // }
-        // // Turn sprite left
-        // else if (inputHorizontal < 0)
-        // {
-        //     //Trigger animation Left
-        //     this.transform.rotation = Quaternion.identity;
-        //     this.transform.Rotate(0, 0, 90);
-        // }
-        // // Turn sprite north
-        // else if (inputVertical > 0)
-        // {
-        //     this.transform.rotation = Quaternion.identity;
-        //     this.transform.Rotate(0, 0, 0);
-        // }
-        // // Turn sprite south
-        // else if (inputVertical < 0)
-        // {
-        //     this.transform.rotation = Quaternion.identity;
-        //     this.transform.Rotate(0, 0, -180);
-        // }
     }
 }
