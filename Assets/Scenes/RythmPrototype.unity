@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 205836481}
   - component: {fileID: 205836482}
+  - component: {fileID: 205836484}
   m_Layer: 5
   m_Name: DotSpawnArea
   m_TagString: Untagged
@@ -268,6 +269,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 320, y: 70}
   m_EdgeRadius: 0
+--- !u!114 &205836484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205836480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 1
+  m_StartAxis: 0
+  m_CellSize: {x: 45, y: 20}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 2
+  m_ConstraintCount: 3
 --- !u!1 &348148857
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,8 +342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4141333129399536438, guid: 3c7e70e8182e3db4880916f748bfadc4, type: 3}
-  instanceOn: {fileID: 205836480}
-  numberToCreate: 1
+  area: {fileID: 205836480}
+  numberToCreate: 7
 --- !u!1 &375406149
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +499,7 @@ GameObject:
   - component: {fileID: 1516036725}
   - component: {fileID: 1516036724}
   m_Layer: 5
-  m_Name: RythmbarCanvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
