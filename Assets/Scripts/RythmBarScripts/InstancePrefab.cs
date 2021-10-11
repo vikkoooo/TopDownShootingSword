@@ -21,20 +21,19 @@ namespace RythmBarScripts
         
         public void InstanceObjects()
         {
-            // BoxCollider2D spawnArea = instanceOn.GetComponent<BoxCollider2D>();
+            // BoxCollider2D spawnArea = area.GetComponent<BoxCollider2D>();
             // GameObject instance;
             // float areaX, areaY;
-            // Vector2 pos;
-        
-            for (int i = 0; i < numberToCreate; i++)
-            {
-                // instance = prefab;
-                // areaX = Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x);
-                // areaY = Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y);
-                // Debug.Log($"Xarea={areaX},Yarea={areaY}");
-                // pos = new Vector2(areaX, areaY);
-                Instantiate(prefab, area.transform);
-            }
+            // Vector3 pos;
+            //
+            // for (int i = 0; i < numberToCreate; i++)
+            // {
+            //     instance = prefab;
+            //     // areaX = spawnArea.bounds.min.x, spawnArea.bounds.max.x);
+            //     areaY = Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y);
+            //     pos = new Vector3(areaX, areaY, 0);
+            //     Instantiate(prefab, pos, new Quaternion());
+            // }
         }
         
         // private Vector2 RandomizePosition(BoxCollider2D area)
@@ -50,3 +49,7 @@ namespace RythmBarScripts
         
     }
 }
+
+// Diffen mellan max och min 
+//
+// Placera ut instanser, på en grid, inte ha samma y värde som någon annan, och randomize position vid varje start

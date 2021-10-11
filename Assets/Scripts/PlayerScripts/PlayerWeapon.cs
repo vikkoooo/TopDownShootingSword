@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerSword : MonoBehaviour
+public class PlayerWeapon : MonoBehaviour
 {
 	// Settings
 	private float timeSinceLastAttack;

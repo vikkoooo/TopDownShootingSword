@@ -27,7 +27,7 @@ public class RythmBarController : MonoBehaviour
         numberOfMisses = 0;
         numberToHit = dotSpawner.numberToCreate;
         
-        sliderToPlay.SliderPlay();
+        StartCoroutine(  sliderToPlay.SliderPlay());
         dotSpawner.InstanceObjects();
     }
     

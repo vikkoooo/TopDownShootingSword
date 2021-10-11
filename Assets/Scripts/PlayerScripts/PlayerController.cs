@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     private Rigidbody2D playerBody;
     public Animator anim;
-    private PlayerSword playerSwordScript;
+    private PlayerWeapon playerSwordScript;
 
     [SerializeField] private float playerMoveSpeed = 10f;
     [SerializeField] private float dashForce = 5000f;
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         cam = Camera.main;
         playerBody = GetComponent<Rigidbody2D>();
-        playerSwordScript = GetComponent<PlayerSword>();
+        playerSwordScript = GetComponent<PlayerWeapon>();
     }
     private void Update()
     {
@@ -81,8 +81,6 @@ public class PlayerController : MonoBehaviour
     
     private void Move()
     {
-        Debug.Log("Executing move");
         playerBody.velocity = new Vector2(inputHorizontal * playerMoveSpeed, inputVertical * playerMoveSpeed);
-        
     }
 }

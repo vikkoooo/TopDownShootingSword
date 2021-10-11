@@ -233,11 +233,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 21376971}
-  - component: {fileID: 21376968}
+  - component: {fileID: 21376972}
+  - component: {fileID: 21376970}
+  - component: {fileID: 21376973}
+  - component: {fileID: 21376974}
   - component: {fileID: 21376969}
+  - component: {fileID: 21376968}
   m_Layer: 0
   m_Name: EnemyKnight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01181d773b9cd894c82eb581af47f4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.37
+  moveSpeed: 2
 --- !u!114 &21376969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +273,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySword: {fileID: 942805851}
   interval: 2
+  paus: 1
+--- !u!61 &21376970
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21376967}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.02}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!4 &21376971
 Transform:
   m_ObjectHideFlags: 0
@@ -286,6 +317,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &21376972
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21376967}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &21376973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21376967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4854f6e6baf1441d3b8e3b3ac277a7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &21376974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21376967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b631f73f7ea17a04aae50344b70a4fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2055358683}
 --- !u!1 &50156168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,6 +1660,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1161315087, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
+      propertyPath: m_Radius
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161315087, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -1653,6 +1734,10 @@ PrefabInstance:
     - target: {fileID: 7622387740575873134, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: m_TagString
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622387740951157436, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
@@ -2139,6 +2224,7 @@ GameObject:
   - component: {fileID: 2055358681}
   - component: {fileID: 2055358682}
   - component: {fileID: 2055358683}
+  - component: {fileID: 2055358684}
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -2221,7 +2307,7 @@ Animator:
   m_GameObject: {fileID: 2055358680}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64e2fd05feb9ac6478ec40dece8c6f1f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2230,6 +2316,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2055358684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055358680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f5ff48aad007e4da2f8c94dd1f5789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2138428762
 GameObject:
   m_ObjectHideFlags: 0
