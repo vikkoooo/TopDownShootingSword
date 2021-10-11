@@ -10,11 +10,12 @@ public class FlashSprite : MonoBehaviour
     private void Start()
     {
         mySprite = GetComponent<SpriteRenderer>();
+        mySprite.color = Color.white;
     }
     
     public IEnumerator Flash()
     {
-        yield return new WaitForSeconds(flashTime * 3);
+        yield return new WaitForSeconds(flashTime * 2);
         mySprite.color = Color.red;
         yield return new WaitForSeconds(flashTime);
         mySprite.color = Color.white;
