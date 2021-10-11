@@ -10,7 +10,9 @@ public class PlayerSword : MonoBehaviour
 
 	public GameObject colliderObject; // The collider used
 	private int damage = 25;
-
+	
+	
+	
 	void Start()
 	{
 		timeSinceLastAttack = timeBetweenAttack; // The player dont have to wait for the first attack
@@ -22,20 +24,22 @@ public class PlayerSword : MonoBehaviour
 		// Count how long it was since the player attacked
 		timeSinceLastAttack += Time.deltaTime;
 	}
-
-	void Update()
+	
+	public bool Attack()
 	{
 		// Player attempts to attack
-		if (Input.GetButtonDown("Fire1") && timeSinceLastAttack >= timeBetweenAttack)
+		if (timeSinceLastAttack >= timeBetweenAttack)
 		{
 			colliderObject.SetActive(true); // Activate the collider
 			Debug.Log("Weapon swing started");
 
 			timeSinceLastAttack = 0f;
 			StartCoroutine(CheckMiss(attackDuration)); // Start timer to deactivate the collider in case of miss
+			return true;
 		}
+		else return false;
 	}
-
+	
 	private IEnumerator CheckMiss(float duration)
 	{
 		// Wait for the attack duration
