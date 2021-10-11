@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Numerics;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class PlayerWeapon : MonoBehaviour
 	private float timeSinceLastAttack;
 	[SerializeField] private float timeBetweenAttack = 0.8f; // How much should you be able to spam? Animation needs to finish almost?
 	[SerializeField] private float attackDuration = 1f; // For how long will the trigger be visible? Prefer to sync with animation
+	[SerializeField] private float weaponPushBack = 20f;
 
 	public GameObject colliderObject; // The collider used
 	private int damage = 25;
@@ -58,6 +61,10 @@ public class PlayerWeapon : MonoBehaviour
 	{	
 		if (collidedObject.CompareTag("Enemy"))
 		{
+			Rigidbody2D rb = collidedObject.GetComponent<Rigidbody2D>();
+			Vector2 attackDirection = rb.transform.position - transform.position;
+			rb.AddForce(attackDirection.normalized * (weaponPushBack * 100), ForceMode2D.Force);
+			
 			collidedObject.GetComponent<Enemy>().TakeDamage(damage);
 			colliderObject.SetActive(false);
 			Debug.Log("Weapon swing hit. Damage to monster");

@@ -336,8 +336,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &21376973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,6 +1714,10 @@ PrefabInstance:
     - target: {fileID: 7622387739909162031, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622387739909162064, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
+      propertyPath: weaponPushBack
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7622387739909162066, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: hearts.Array.data[0]
