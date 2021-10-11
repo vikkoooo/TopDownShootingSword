@@ -47,3 +47,6 @@ TagManager:
   - name: EnemySprites
     uniqueID: 3279249855
     locked: 0
+  - name: BehindableObjects
+    uniqueID: 3165538751
+    locked: 0
