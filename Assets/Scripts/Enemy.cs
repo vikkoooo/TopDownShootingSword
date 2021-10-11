@@ -6,6 +6,16 @@ using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
+    
+    //Player
+    GameObject Player;
+
+    public Transform PlayerPos;
+    //EnemyBehavior
+    private bool moveTowardsPlayer = false;
+    
+    
+    // Stats
     private int health = 100;
     private int damage = 1;
 
@@ -16,6 +26,8 @@ public class Enemy : MonoBehaviour
     
     private void Start()
     { 
+        Player = GameObject.Find("Player");
+        PlayerPos = Player.transform;
         body = GetComponent<Rigidbody2D>();
         // Randomize direction on start
         directions = new List<Vector2>();
@@ -24,9 +36,24 @@ public class Enemy : MonoBehaviour
         directions.Add(Vector2.left);
         directions.Add(Vector2.right);
 
-        int index = Random.Range(0, 4);
-        body.velocity = directions[index] * moveSpeed;
+        
+      
     }
+
+    private void Update()
+    {
+        float dist = Vector3.Distance(PlayerPos.position, transform.position);
+        if(dist<6||moveTowardsPlayer==true)
+        {
+            moveTowardsPlayer = true;
+        if (moveTowardsPlayer == true)
+        {
+            MoveTowardsPlayer();
+            
+        }
+        }
+    }
+
     public void TakeDamage(int amount)
     {
         health -= amount;
@@ -44,4 +71,20 @@ public class Enemy : MonoBehaviour
             collidedObject.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         }    
     }
+
+    void EnemyRandomMovment()
+    {
+        int index = Random.Range(0, 4);
+        body.velocity = directions[index] * moveSpeed;
+        
+    }
+
+    void MoveTowardsPlayer()
+    {
+        
+        float distance = 2 * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, distance);
+        
+    }
+    
 }
