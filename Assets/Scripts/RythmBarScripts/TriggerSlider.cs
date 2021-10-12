@@ -23,9 +23,9 @@ public class TriggerSlider : MonoBehaviour
         {
             time += Time.deltaTime / loopDuration;
             slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, time);
+ 
             yield return null;
         }
-
         LerpeReset();
     }
 
@@ -34,5 +34,8 @@ public class TriggerSlider : MonoBehaviour
         slider.value = slider.minValue;
         time = 0;
     }
+    
+    
+    
 }
 
