@@ -9,7 +9,7 @@ public class PlayerWeapon : MonoBehaviour
 	private float timeSinceLastAttack;
 	[SerializeField] private float timeBetweenAttack = 0.8f; // How much should you be able to spam? Animation needs to finish almost?
 	[SerializeField] private float attackDuration = 1f; // For how long will the trigger be visible? Prefer to sync with animation
-	[SerializeField] private float weaponPushBack = 20f;
+	[SerializeField] private float weaponPushBack = 69f;
 
 	public GameObject colliderObject; // The collider used
 	private int damage = 25;
