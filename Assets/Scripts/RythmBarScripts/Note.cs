@@ -12,6 +12,7 @@ public class Note : MonoBehaviour
 
     private RectTransform rectTransform;
     private Image image;
+    
     private void Start()
     {
         controller = GameObject.FindWithTag("Minigame").GetComponent<RythmBarController>();
@@ -20,32 +21,21 @@ public class Note : MonoBehaviour
         correctInput = false;
     }
 
-    private void Update()
-    {
-        correctInput = Input.GetMouseButtonDown(0);
-        if (Input.GetMouseButtonUp(0))
-        {
-            correctInput = false;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         //feedback to player, enter note
         rectTransform.sizeDelta = new Vector2(20, 20);
-        Debug.Log("Entered trigger");
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (correctInput)
+        if (Input.GetButton("Fire1"))
         {
             Debug.Log("hit note");
             //feedback to player, hit
             controller.numberOfHits++;
+            controller.numberOfMisses--;
             Destroy(gameObject);
         }
-        
-        Debug.Log("staying on trigger");
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -54,6 +44,6 @@ public class Note : MonoBehaviour
 
         //feedback to player, missed hit
         controller.numberOfMisses++;
-        Debug.Log("Missed trigger");
     }
+    
 }
