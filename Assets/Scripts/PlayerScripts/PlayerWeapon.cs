@@ -65,7 +65,7 @@ public class PlayerWeapon : MonoBehaviour
 			Vector2 attackDirection = rb.transform.position - transform.position;
 			rb.AddForce(attackDirection.normalized * (weaponPushBack * 100), ForceMode2D.Force);
 			
-			collidedObject.GetComponent<Enemy>().TakeDamage(damage);
+			collidedObject.GetComponent<EnemyTakeDamageKeepScore>().TakeDamage(damage);
 			colliderObject.SetActive(false);
 			Debug.Log("Weapon swing hit. Damage to monster");
 

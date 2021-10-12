@@ -17,7 +17,7 @@ public class FlashSprite : MonoBehaviour
 
     public void StartFlash()
     {
-        Flash();
+        StartCoroutine(Flash());
     }
     
     private IEnumerator Flash()

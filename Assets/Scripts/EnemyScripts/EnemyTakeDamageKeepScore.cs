@@ -4,21 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour
+public class EnemyTakeDamageKeepScore : MonoBehaviour
 {
-    
-    //Player
-    //GameObject Player;
-
-    // public Transform PlayerPos;
-    //EnemyBehavior
-    //private bool moveTowardsPlayer = false;
-    
     // Stats
     private int health = 100;
     private int damage = 1;
     
-    private Rigidbody2D body;
+
     //private float moveSpeed = 0.5f;
     
     // For the score
@@ -28,11 +20,6 @@ public class Enemy : MonoBehaviour
     
     private void Start()
     {
-        //Player = GameObject.Find("Player");
-        // PlayerPos = Player.transform;
-        body = GetComponent<Rigidbody2D>();
-        // Randomize direction on start
-
         scoreObj = GameObject.Find("ScoreObject");
         s = scoreObj.GetComponent<Score>();
         s.PlayerScore += 0;

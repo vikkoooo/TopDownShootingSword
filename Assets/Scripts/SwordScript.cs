@@ -8,6 +8,7 @@ public class SwordScript : MonoBehaviour
     public GameObject minigame;
     private Transform location;
     
+    
     private void Start()
     {
         location = GameObject.FindWithTag("MinigameLocation").GetComponent<Transform>();
@@ -17,6 +18,7 @@ public class SwordScript : MonoBehaviour
     {
         if (collidedObject.CompareTag("Player"))
         {
+            Destroy(gameObject.GetComponent<Collider2D>());
             Instantiate (minigame, location.transform);
             Debug.Log("Player gick på svärd!");
         }    
