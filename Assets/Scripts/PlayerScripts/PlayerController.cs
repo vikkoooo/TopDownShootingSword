@@ -8,9 +8,11 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     private Camera cam;
+    private AudioManager audioManager;
     private Rigidbody2D playerBody;
     public Animator anim;
     private PlayerWeapon playerSwordScript;
+    
 
     [SerializeField] private float playerMoveSpeed = 10f;
     //[SerializeField] private float dashForce = 5000f;
@@ -31,8 +33,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        audioManager =  GameObject.Find("AudioManager").GetComponent<AudioManager>();
         playerBody = GetComponent<Rigidbody2D>();
         playerSwordScript = GetComponent<PlayerWeapon>();
+        
     }
     private void Update()
     {
@@ -53,6 +57,11 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = false;
         }
+
+        if (isWalking)
+        {
+            audioManager.Play("PlayerWalk");
+        }
         
         anim.SetBool("isWalking", isWalking);
         anim.SetFloat("xInput", inputHorizontal);
@@ -67,6 +76,7 @@ public class PlayerController : MonoBehaviour
             if (playerSwordScript.Attack())
             {
                 anim.SetTrigger("isAttacking");
+                audioManager.Play("PlayerSwing");
             }
         }
         if (inputDash)
