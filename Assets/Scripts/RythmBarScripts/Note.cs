@@ -14,7 +14,7 @@ public class Note : MonoBehaviour
     private Image image;
     private void Start()
     {
-        controller = GameObject.Find("TimingBar").GetComponent<RythmBarController>();
+        controller = GameObject.FindWithTag("Minigame").GetComponent<RythmBarController>();
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
         correctInput = false;
