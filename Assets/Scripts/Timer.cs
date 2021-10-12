@@ -17,14 +17,11 @@ public class Timer : MonoBehaviour
         if (timeValue > 0)
         {
             timeValue -= Time.deltaTime;
-
-
         }
         else
         {
             timeEnded = true;
             timeValue = 0;
-            
         }
         DisplayTime(timeValue);
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class AddForce : MonoBehaviour
+public class Dash : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float force = 2f;

@@ -7,18 +7,24 @@ public class FlashSprite : MonoBehaviour
 {
     private SpriteRenderer mySprite;
     private float flashTime = 0.1f;
+    
     private void Start()
     {
         mySprite = GetComponent<SpriteRenderer>();
         mySprite.color = Color.white;
     }
+
+
+    public void StartFlash()
+    {
+        Flash();
+    }
     
-    public IEnumerator Flash()
+    private IEnumerator Flash()
     {
         yield return new WaitForSeconds(flashTime * 2);
         mySprite.color = Color.red;
         yield return new WaitForSeconds(flashTime);
         mySprite.color = Color.white;
-        
     }
 }

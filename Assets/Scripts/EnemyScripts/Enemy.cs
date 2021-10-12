@@ -8,37 +8,47 @@ public class Enemy : MonoBehaviour
 {
     
     //Player
-    GameObject Player;
+    //GameObject Player;
 
     // public Transform PlayerPos;
     //EnemyBehavior
-    private bool moveTowardsPlayer = false;
+    //private bool moveTowardsPlayer = false;
     
     // Stats
     private int health = 100;
     private int damage = 1;
     
     private Rigidbody2D body;
-    private float moveSpeed = 0.5f;
+    //private float moveSpeed = 0.5f;
+    
+    // For the score
+    private GameObject scoreObj;
+    private Score s;
 
     
     private void Start()
     {
-        Player = GameObject.Find("Player");
+        //Player = GameObject.Find("Player");
         // PlayerPos = Player.transform;
         body = GetComponent<Rigidbody2D>();
         // Randomize direction on start
+
+        scoreObj = GameObject.Find("ScoreObject");
+        s = scoreObj.GetComponent<Score>();
+        s.PlayerScore += 0;
     }
     
 
     public void TakeDamage(int amount)
     {
         health -= amount;
-        StartCoroutine(GetComponentInChildren<FlashSprite>().Flash());
+        GetComponentInChildren<FlashSprite>().StartFlash();
+        
         if (health <= 0)
         {
             Destroy(gameObject);
             Debug.Log("Monster died");
+            s.PlayerScore += 1;
         }
     }
     private void OnCollisionEnter2D(Collision2D collidedObject)

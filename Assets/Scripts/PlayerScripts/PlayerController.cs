@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     private PlayerWeapon playerSwordScript;
 
     [SerializeField] private float playerMoveSpeed = 10f;
-    [SerializeField] private float dashForce = 5000f;
-    private float damageKnockBack = 5000f;
+    //[SerializeField] private float dashForce = 5000f;
+    //private float damageKnockBack = 5000f;
 
     private Vector2 mousePosition;
     private float inputHorizontal;

@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	private Rigidbody2D body; 
 	private float horizontal;
 	private float vertical;
-	private float knockBack = -5000f;
+	//private float knockBack = -5000f;
 	
 	//Should be moved to player-control script?
 	public Animator anim;

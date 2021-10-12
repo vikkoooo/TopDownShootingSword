@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
 	public GameObject[] monsters;
-	private int n_monsters = 4; // Number of clouds to spawn
+	private int n_monsters = 10;
 	
     public GameObject area1;
     private BoxCollider2D area1_collider;
@@ -17,16 +17,9 @@ public class EnemySpawner : MonoBehaviour
 	    area1_collider = area1.GetComponent<BoxCollider2D>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
 	    CreateMonsters(n_monsters, area1_collider);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     
     private void CreateMonsters(int n, BoxCollider2D area)
