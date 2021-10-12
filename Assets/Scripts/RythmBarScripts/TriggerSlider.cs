@@ -14,20 +14,26 @@ public class TriggerSlider : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
-    public void SliderPlay()
+    public IEnumerator SliderPlay()
     {
-        StartCoroutine(LerpSlider());
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log("loop start " + i);
+            StartCoroutine(LerpSlider());
+            yield return null;
+        }
     }
+    
     private IEnumerator LerpSlider()
     {
         slider.value = slider.minValue;
         float time = 0;
-        while (time < loopDuration) 
-        {
+        
+            while (time < loopDuration) 
+            {
                 time += Time.deltaTime / loopDuration;
                 slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, time);
                 yield return null;
-        }
-        slider.value = slider.maxValue;
+            }
     }
 }
