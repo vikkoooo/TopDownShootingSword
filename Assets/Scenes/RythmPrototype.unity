@@ -396,6 +396,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6562956528990709400, guid: 5243a16b00cf2db41998be44a02a8785, type: 3}
+      propertyPath: loopDuration
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6562956528990709404, guid: 5243a16b00cf2db41998be44a02a8785, type: 3}
       propertyPath: m_Pivot.x
       value: 0.50000006

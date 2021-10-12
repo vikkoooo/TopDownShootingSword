@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class Note : MonoBehaviour
 {
     private bool correctInput;
-    private bool wrongInput;
     private RythmBarController controller;
 
     private RectTransform rectTransform;
@@ -18,11 +17,16 @@ public class Note : MonoBehaviour
         controller = GameObject.Find("TimingBar").GetComponent<RythmBarController>();
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
+        correctInput = false;
     }
 
     private void Update()
     {
         correctInput = Input.GetMouseButtonDown(0);
+        if (Input.GetMouseButtonUp(0))
+        {
+            correctInput = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,12 +44,7 @@ public class Note : MonoBehaviour
             controller.numberOfHits++;
             Destroy(gameObject);
         }
-
-        if (wrongInput)
-        {
-            controller.numberOfMisses++;
-            //feedback to player, wrong hit
-        }
+        
         Debug.Log("staying on trigger");
     }
     private void OnTriggerExit2D(Collider2D other)

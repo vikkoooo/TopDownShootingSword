@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 6562956528990709400}
   m_Layer: 5
   m_Name: TimingBar
-  m_TagString: Untagged
+  m_TagString: Minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,7 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rythmBarController: {fileID: 6562956528990709405}
-  dotSpawner: {fileID: 0}
   allowedMisses: 3
   numberOfHits: 0
   numberOfMisses: 0

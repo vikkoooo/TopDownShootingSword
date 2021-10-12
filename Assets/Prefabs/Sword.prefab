@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd8ca0bdcee4504fab1537656abbf17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minigame: {fileID: 6562956528990709405, guid: 5243a16b00cf2db41998be44a02a8785, type: 3}
 --- !u!60 &3812439051992247151
 PolygonCollider2D:
   m_ObjectHideFlags: 0
