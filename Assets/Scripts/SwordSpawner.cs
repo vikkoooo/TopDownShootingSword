@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SwordSpawner : MonoBehaviour
 {
-	public GameObject[] swords;
+	public Sprite[] swords;
+	public GameObject swordPrefab;
 	private int n_swords = 10;
 	
 	public GameObject area1;
@@ -17,16 +15,9 @@ public class SwordSpawner : MonoBehaviour
 		area1_collider = area1.GetComponent<BoxCollider2D>();
 	}
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		CreateSwords(n_swords, area1_collider);
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-        
 	}
     
 	private void CreateSwords(int n, BoxCollider2D area)
@@ -34,7 +25,9 @@ public class SwordSpawner : MonoBehaviour
 		for (int i = 0; i < n; i++)
 		{
 			int swordType = Random.Range(0, swords.Length);
-			GameObject newSword = Instantiate(swords[swordType]);
+			GameObject newSword = Instantiate(swordPrefab);
+			newSword.GetComponent<SpriteRenderer>().sprite = swords[swordType];
+			
 			newSword.transform.parent = this.transform; // Make it child of the thing this script is attached to
 			newSword.transform.position = RandomizePosition(area); // Set new position
 		}

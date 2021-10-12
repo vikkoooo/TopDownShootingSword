@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
 
     public float timeValue = 90;
+    private bool timeEnded = false;
 
     public Text timerText;
     // Update is called once per frame
@@ -16,14 +17,11 @@ public class Timer : MonoBehaviour
         if (timeValue > 0)
         {
             timeValue -= Time.deltaTime;
-
-
         }
         else
         {
-            
-                timeValue = 0;
-            
+            timeEnded = true;
+            timeValue = 0;
         }
         DisplayTime(timeValue);
     }

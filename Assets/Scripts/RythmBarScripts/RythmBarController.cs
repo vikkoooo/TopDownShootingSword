@@ -9,7 +9,7 @@ public class RythmBarController : MonoBehaviour
 {
     public GameObject rythmBarController;
     TriggerSlider sliderToPlay;
-    public InstancePrefab dotSpawner;
+    // public InstancePrefab dotSpawner;
     
     public int allowedMisses = 3;
     
@@ -18,17 +18,22 @@ public class RythmBarController : MonoBehaviour
     
     private int numberToHit;
     
+    private GameObject scoreObj;
+    private Score s;
+    private GameObject player;
+    private int damage = 1;
+    
     private void Start()
     {
-        // dotSpawner = rythmBarController.GetComponent<InstanceNotes>();
         sliderToPlay = rythmBarController.GetComponent<TriggerSlider>();
         
-        numberOfHits = 0;
-        numberOfMisses = 0;
-        numberToHit = dotSpawner.numberToCreate;
+        numberToHit = 5;
+        StartCoroutine(sliderToPlay.LerpSlider());
         
-        sliderToPlay.SliderPlay();
-        dotSpawner.InstanceObjects();
+        scoreObj = GameObject.Find("ScoreObject");
+        s = scoreObj.GetComponent<Score>();
+        s.PlayerScore += 0;
+        player = GameObject.FindWithTag("Player");
     }
     
     private void Update()
@@ -44,13 +49,21 @@ public class RythmBarController : MonoBehaviour
     }
     void Win()
     {
+        s.PlayerScore += 5;
+        Destroy(gameObject);
+        Debug.Log("You win");
         //Destroy Sword
         //Add score
         //add attackpower to Player
     }
 
     void Lose()
-    {   //set back player state
+    {
+        player.GetComponent<PlayerStats>().TakeDamage(damage);
+        Destroy(gameObject);
+        Debug.Log("You lose");
+
+        //set back player state
         //Deactivate rythmbar
         //Destroy sword
         //Take Damage
