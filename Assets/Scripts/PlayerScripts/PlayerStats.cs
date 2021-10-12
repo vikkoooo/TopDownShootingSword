@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
+        GetComponentInChildren<FlashSprite>().StartFlash();
+        
         health -= amount;
         CheckHealth(); // Updates UI and checks for death
     }

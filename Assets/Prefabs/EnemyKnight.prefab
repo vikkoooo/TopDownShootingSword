@@ -201,7 +201,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1b7e99cb881f3b14e980f9e5b0cdd08c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -365,7 +365,6 @@ GameObject:
   - component: {fileID: 6439302167498401607}
   - component: {fileID: 6439302167498401600}
   - component: {fileID: 6439302167498401606}
-  - component: {fileID: 6439302167498401601}
   - component: {fileID: 6439302167498401602}
   - component: {fileID: 6439302167498401605}
   - component: {fileID: 6439302167498401604}
@@ -440,18 +439,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
---- !u!114 &6439302167498401601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6439302167498401611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4854f6e6baf1441d3b8e3b3ac277a7e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6439302167498401602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01181d773b9cd894c82eb581af47f4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 3
 --- !u!1 &6439302167776001234
 GameObject:
   m_ObjectHideFlags: 0

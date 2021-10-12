@@ -25,7 +25,6 @@ public class EnemyTakeDamageKeepScore : MonoBehaviour
         s.PlayerScore += 0;
     }
     
-
     public void TakeDamage(int amount)
     {
         health -= amount;
@@ -46,6 +45,11 @@ public class EnemyTakeDamageKeepScore : MonoBehaviour
             collidedObject.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         }    
     }
+
+
+    
+    
+
 
     // void EnemyRandomMovment()
     // {

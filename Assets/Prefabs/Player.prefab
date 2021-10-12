@@ -98,7 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1654471393}
   playerMoveSpeed: 7
-  dashForce: 5000
   isWalking: 0
 --- !u!114 &7622387739909162066
 MonoBehaviour:
@@ -117,8 +116,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fullHearts: {fileID: 21300000, guid: 84212db8e0ebc42bfae8b316ccf10210, type: 3}
-  emptyHearts: {fileID: 21300000, guid: f58cbc3605e104cb694fd511793168e8, type: 3}
 --- !u!114 &7622387739909162064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +286,7 @@ GameObject:
   - component: {fileID: 7622387741104595641}
   - component: {fileID: 7622387741104595646}
   - component: {fileID: 1654471393}
+  - component: {fileID: 151042571}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -380,3 +378,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &151042571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622387741104595640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f5ff48aad007e4da2f8c94dd1f5789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

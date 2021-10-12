@@ -41,7 +41,6 @@ using UnityEngine;
         {
             enemySword.SetActive(false);
             anim.SetBool("isAttacking", false);
-
         }
     }
 }

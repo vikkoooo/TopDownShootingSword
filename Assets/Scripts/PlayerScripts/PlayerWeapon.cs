@@ -2,6 +2,7 @@ using System.Collections;
 using System.Numerics;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -63,9 +64,18 @@ public class PlayerWeapon : MonoBehaviour
 		{
 			Rigidbody2D rb = collidedObject.GetComponent<Rigidbody2D>();
 			Vector2 attackDirection = rb.transform.position - transform.position;
-			rb.AddForce(attackDirection.normalized * (weaponPushBack * 100), ForceMode2D.Force);
+			rb.velocity = Vector2.zero;
 			
-			collidedObject.GetComponent<EnemyTakeDamageKeepScore>().TakeDamage(damage);
+			StartCoroutine(AddForceToObject());
+			IEnumerator AddForceToObject()
+			{
+				yield return new WaitForSeconds(0.3f);
+				rb.AddForce(attackDirection.normalized * (weaponPushBack * 100), ForceMode2D.Force);
+			}
+			
+			// collidedObject.GetComponent<EnemyTakeDamageKeepScore>().TakeDamage(damage);
+			collidedObject.GetComponent<EnemyController>().TakeDamage(damage);
+
 			colliderObject.SetActive(false);
 			Debug.Log("Weapon swing hit. Damage to monster");
 
