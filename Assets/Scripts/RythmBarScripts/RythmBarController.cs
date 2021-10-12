@@ -27,7 +27,7 @@ public class RythmBarController : MonoBehaviour
     {
         sliderToPlay = rythmBarController.GetComponent<TriggerSlider>();
         
-        numberToHit = 5;
+        numberToHit = 4;
         StartCoroutine(sliderToPlay.LerpSlider());
         
         scoreObj = GameObject.Find("ScoreObject");
