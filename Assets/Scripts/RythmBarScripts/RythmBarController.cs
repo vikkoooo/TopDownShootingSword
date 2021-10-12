@@ -23,12 +23,8 @@ public class RythmBarController : MonoBehaviour
         // dotSpawner = rythmBarController.GetComponent<InstanceNotes>();
         sliderToPlay = rythmBarController.GetComponent<TriggerSlider>();
         
-        numberOfHits = 0;
-        numberOfMisses = 0;
-        numberToHit = dotSpawner.numberToCreate;
-        
-        StartCoroutine(  sliderToPlay.SliderPlay());
-        dotSpawner.InstanceObjects();
+        numberToHit = 5;
+        StartCoroutine(sliderToPlay.LerpSlider());
     }
     
     private void Update()
@@ -44,13 +40,17 @@ public class RythmBarController : MonoBehaviour
     }
     void Win()
     {
+        Debug.Log("You win");
         //Destroy Sword
         //Add score
         //add attackpower to Player
     }
 
     void Lose()
-    {   //set back player state
+    {
+        Debug.Log("You lose");
+
+        //set back player state
         //Deactivate rythmbar
         //Destroy sword
         //Take Damage

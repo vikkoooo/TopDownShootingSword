@@ -1,39 +1,38 @@
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TriggerSlider : MonoBehaviour
 {
     public Slider slider;
-    public float loopDuration = 3f;
+    public float loopDuration;
+    float time;
 
     private void Start()
     {
         slider = GetComponent<Slider>();
     }
-
-    public IEnumerator SliderPlay()
+    
+    public IEnumerator LerpSlider()
     {
-        for (int i = 0; i < 3; i++)
+        LerpeReset();
+        while (time < loopDuration)
         {
-            Debug.Log("loop start " + i);
-            StartCoroutine(LerpSlider());
+            time += Time.deltaTime / loopDuration;
+            slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, time);
             yield return null;
         }
+
+        LerpeReset();
     }
-    
-    private IEnumerator LerpSlider()
+
+    void LerpeReset()
     {
         slider.value = slider.minValue;
-        float time = 0;
-        
-            while (time < loopDuration) 
-            {
-                time += Time.deltaTime / loopDuration;
-                slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, time);
-                yield return null;
-            }
+        time = 0;
     }
 }
+
