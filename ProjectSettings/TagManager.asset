@@ -9,6 +9,7 @@ TagManager:
   - Sword
   - Minigame
   - MinigameLocation
+  - Drop
   layers:
   - Default
   - TransparentFX

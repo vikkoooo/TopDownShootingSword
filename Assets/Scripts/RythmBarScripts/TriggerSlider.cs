@@ -10,10 +10,14 @@ public class TriggerSlider : MonoBehaviour
     public Slider slider;
     public float loopDuration;
     float time;
+    // private AudioSource audioSrc;
+
 
     private void Start()
     {
         slider = GetComponent<Slider>();
+        // audioSrc = FindObjectOfType<AudioManager>().GetComponent("Notehit") as AudioSource;
+
     }
     
     public IEnumerator LerpSlider()
@@ -23,10 +27,12 @@ public class TriggerSlider : MonoBehaviour
         {
             time += Time.deltaTime / loopDuration;
             slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, time);
+            // audioSrc.pitch = Mathf.Lerp(3f, 6f, time);
  
             yield return null;
         }
         LerpeReset();
+        Destroy(gameObject);
     }
 
     void LerpeReset()

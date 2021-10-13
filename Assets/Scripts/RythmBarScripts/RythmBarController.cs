@@ -10,6 +10,7 @@ public class RythmBarController : MonoBehaviour
     public GameObject rythmBarController;
     TriggerSlider sliderToPlay;
     // public InstancePrefab dotSpawner;
+
     
     public int allowedMisses = 3;
     
@@ -28,12 +29,19 @@ public class RythmBarController : MonoBehaviour
         sliderToPlay = rythmBarController.GetComponent<TriggerSlider>();
         
         numberToHit = 4;
-        StartCoroutine(sliderToPlay.LerpSlider());
+        
         
         scoreObj = GameObject.Find("ScoreObject");
         s = scoreObj.GetComponent<Score>();
         s.PlayerScore += 0;
         player = GameObject.FindWithTag("Player");
+
+        StartCoroutine(Delay());
+        IEnumerator Delay()
+        {
+            yield return new WaitForSeconds(1);
+            StartCoroutine(sliderToPlay.LerpSlider());
+        }
     }
     
     private void Update()
@@ -49,7 +57,9 @@ public class RythmBarController : MonoBehaviour
     }
     void Win()
     {
+
         s.PlayerScore += 5;
+        FindObjectOfType<AudioManager>().Play("DingPickup");
         Destroy(gameObject);
         Debug.Log("You win");
         //Destroy Sword

@@ -25,14 +25,14 @@ public class Note : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Notehit");
         //feedback to player, enter note
-        rectTransform.sizeDelta = new Vector2(20, 20);
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x + 10, rectTransform.sizeDelta.y + 10);
     }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (Input.GetButton("Fire1"))
         {
-            Debug.Log("hit note");
             //feedback to player, hit
+            FindObjectOfType<AudioManager>().Play("DingNote");
             controller.numberOfHits++;
             controller.numberOfMisses--;
             Destroy(gameObject);
@@ -40,7 +40,7 @@ public class Note : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        rectTransform.sizeDelta = new Vector2(10, 10);
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x - 10, rectTransform.sizeDelta.y - 10);
         image.color = Color.red;
 
         //feedback to player, missed hit
