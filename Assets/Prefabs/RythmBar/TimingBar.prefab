@@ -442,4 +442,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 6562956528990709402}
-  loopDuration: 4
+  loopDuration: 2
