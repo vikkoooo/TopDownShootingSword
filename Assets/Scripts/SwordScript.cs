@@ -20,7 +20,6 @@ public class SwordScript : MonoBehaviour
         {
             Destroy(gameObject.GetComponent<Collider2D>());
             Instantiate (minigame, location.transform);
-            Debug.Log("Player gick på svärd!");
         }    
     }
 }
