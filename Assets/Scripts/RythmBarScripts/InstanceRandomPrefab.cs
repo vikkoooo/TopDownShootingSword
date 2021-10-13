@@ -7,7 +7,7 @@ namespace RythmBarScripts
 {
     public class InstanceRandomPrefab : MonoBehaviour
     {
-        public  GameObject prefabs;
+        public GameObject[] prefabs;
         public Transform area;
 
 
@@ -18,7 +18,7 @@ namespace RythmBarScripts
         
         public void InstanceObjects()
         {
-            Instantiate(prefabs, area.transform);
+            Instantiate(prefabs[Random.Range(0, prefabs.Length)], area.transform);
         }
     }
 }

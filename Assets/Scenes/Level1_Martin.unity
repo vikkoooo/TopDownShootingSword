@@ -1465,17 +1465,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4963579850644635049, guid: a00fe1483ea533f42b915043a0dbdbdf, type: 3}
   m_PrefabInstance: {fileID: 1333562182}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &122213984 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
-  m_PrefabInstance: {fileID: 7020360842331036077}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806724430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09500c61efadb614fb2637908fe02014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &123891067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21534,21 +21523,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 908513870, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 122213984}
-    - target: {fileID: 1161315087, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
-      propertyPath: m_Radius
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7622387739909162028, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
-      propertyPath: m_Mass
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7622387739909162030, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622387739909162030, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7622387739909162031, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: m_RootOrder
@@ -21594,14 +21575,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7622387739909162064, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
-      propertyPath: attackDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7622387739909162064, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
-      propertyPath: weaponPushBack
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 7622387739909162066, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
@@ -21618,10 +21591,6 @@ PrefabInstance:
       propertyPath: hearts.Array.data[3]
       value: 
       objectReference: {fileID: 968827580}
-    - target: {fileID: 7622387740575873134, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
-      propertyPath: m_TagString
-      value: PlayerSword
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818eae9d1291f134684c7b1b123fb72b, type: 3}
 --- !u!4 &1917738515 stripped

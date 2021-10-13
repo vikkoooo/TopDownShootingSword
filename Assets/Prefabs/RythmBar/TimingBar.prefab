@@ -48,7 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b3805f8d3ebfce4d8e7d3657c1a2c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 4592131926512487214, guid: f4946ca00a07fda41ad339554d75bbfb, type: 3}
+  prefabs:
+  - {fileID: 4592131926512487214, guid: f4946ca00a07fda41ad339554d75bbfb, type: 3}
+  - {fileID: 6914498409529739908, guid: 8f9ab2b8cf3de9644891be843133bbcc, type: 3}
+  - {fileID: 4821862840979722887, guid: fdbdde62599d29f4987c796f3ce3734f, type: 3}
+  - {fileID: 2865975823108870034, guid: 5cbdb48a0c3e3b64f8a9086c8642aa66, type: 3}
+  - {fileID: 6549960640780494118, guid: 0a7a78b1ec2ca88479f41f1eb363e57f, type: 3}
   area: {fileID: 6562956528500963130}
 --- !u!1 &6562956527464574986
 GameObject:

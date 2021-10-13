@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     // For the score
     private GameObject scoreObj;
     private Score s;
+    private PlayerController playerController;
     
     // Stats
     private int health = 100;
@@ -32,6 +33,7 @@ public class EnemyController : MonoBehaviour
         scoreObj = GameObject.Find("ScoreObject");
         s = scoreObj.GetComponent<Score>();
         s.PlayerScore += 0;
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
     void Update()
     {
@@ -49,6 +51,9 @@ public class EnemyController : MonoBehaviour
         anim.SetFloat("xVel", rb.velocity.x);
 
         Debug.Log("Enemy health" + health);
+        
+        
+        
     }
     
     private void OnCollisionEnter2D(Collision2D collidedObject)
@@ -96,10 +101,12 @@ public class EnemyController : MonoBehaviour
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(followPlayerScript);
         
+        
         anim.SetBool("isAttacking", false);
         anim.SetTrigger("enemyDied");
         
-        s.PlayerScore += 1;
+        playerController.ShowTextPopUp("100");
+        s.PlayerScore += 100;
         
         StartCoroutine(DelayDeath());
         IEnumerator DelayDeath()

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerBody;
     public Animator anim;
     private PlayerWeapon playerSwordScript;
+    public GameObject textPopUpPrefab;
     
 
     [SerializeField] private float playerMoveSpeed = 10f;
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour
     // To Roll
     private bool isRolling;
     private KeyCode lastKeyPushed;
-    
+
+    private string text;
     private void Start()
     {
         cam = Camera.main;
@@ -87,6 +89,12 @@ public class PlayerController : MonoBehaviour
         if (inputDash)
         {
         }
+
+        if (textPopUpPrefab)
+        {
+            ShowTextPopUp(text);
+        }
+        
     }
 
     private void FixedUpdate()
@@ -104,9 +112,18 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Drop"))
         {
+            ShowTextPopUp("10");
             audioManager.Play("DingNote");
             s.PlayerScore += 10;
             Destroy(other.gameObject);
         }
     }
+    
+    public void ShowTextPopUp(string text)
+    {
+        var go = Instantiate(textPopUpPrefab, transform);
+        go.GetComponent<TextMesh>().text = text;
+
+    }
+    
 }
