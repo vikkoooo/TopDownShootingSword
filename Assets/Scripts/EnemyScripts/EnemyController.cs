@@ -66,6 +66,7 @@ public class EnemyController : MonoBehaviour
         Destroy(GetComponent<EnemyKnightAttack>());
 
         rb.isKinematic = true;
+        anim.SetBool("isAttacking", false);
         anim.SetTrigger("enemyDied");
         
         s.PlayerScore += 1;
