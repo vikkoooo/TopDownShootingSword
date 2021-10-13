@@ -64,7 +64,8 @@ public class EnemyController : MonoBehaviour
     {
         Destroy(GetComponent<EnemyFollowPlayer>());
         Destroy(GetComponent<EnemyKnightAttack>());
-
+        Destroy(GetComponent<BoxCollider2D>());
+        
         rb.isKinematic = true;
         anim.SetBool("isAttacking", false);
         anim.SetTrigger("enemyDied");

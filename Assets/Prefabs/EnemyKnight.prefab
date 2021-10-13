@@ -453,8 +453,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6439302166789308503}
   drops:
+  - {fileID: 5714942620494492319, guid: 9f3e563492d2b294594dc0f4f2f398f5, type: 3}
+  - {fileID: 5714942620494492319, guid: cc6e4db8d62a60841a48ea44a5d99ff3, type: 3}
+  - {fileID: 5714942620494492319, guid: a1d158140b7b67f4398b9e6f4608c9d6, type: 3}
+  - {fileID: 5714942620494492319, guid: 50d951d515ade734bb8cbef98fb88a4d, type: 3}
+  - {fileID: 5714942620494492319, guid: 8eadd9f295001374ba9996aeeae0a037, type: 3}
+  - {fileID: 5714942620494492319, guid: fcb3640d40c29e74fa69e6f79131cd16, type: 3}
+  - {fileID: 5714942620494492319, guid: afad4fadf8d043144bf91be9d398310f, type: 3}
   - {fileID: 5714942620494492319, guid: 3688b12abcfcff045abf09f2ee523dca, type: 3}
-  - {fileID: 6889880001652903483, guid: 991aa5afdc807604dae0172cfb7c2f13, type: 3}
 --- !u!114 &6439302167498401605
 MonoBehaviour:
   m_ObjectHideFlags: 0

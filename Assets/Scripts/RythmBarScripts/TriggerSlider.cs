@@ -32,6 +32,7 @@ public class TriggerSlider : MonoBehaviour
             yield return null;
         }
         LerpeReset();
+        Destroy(gameObject);
     }
 
     void LerpeReset()
