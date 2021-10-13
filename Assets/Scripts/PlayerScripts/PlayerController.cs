@@ -60,8 +60,8 @@ public class PlayerController : MonoBehaviour
 
         if (isWalking)
         {
-            audioManager.Play("PlayerWalk");
         }
+        
         
         anim.SetBool("isWalking", isWalking);
         anim.SetFloat("xInput", inputHorizontal);
@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
     
     private void Move()
     {
+        // audioManager.Play("PlayerWalk");
         playerBody.velocity = new Vector2(inputHorizontal * playerMoveSpeed, inputVertical * playerMoveSpeed);
     }
 }

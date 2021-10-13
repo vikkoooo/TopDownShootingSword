@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
@@ -27,21 +28,19 @@ public class PlayerStats : MonoBehaviour
 
     private void CheckHealth()
     {
-        // In hase of health higher than maximum health possible
-        // Sets the health to maximum number of hearts, in other words, the size of the array.
-        if (health > hearts.Length)
-        {
-            health = hearts.Length;
-        }
         // In case if player should die, health reaches 0 or below
-        else if (health <= 0)
+        if (health <= 0)
         {
-            PlayerDied();
-            Debug.Log("Player died");
             health = 0; // Set to 0 so the update hearts thing below gets to update to all empty
+            UpdateHearts();
+            PlayerDied();
+            return;
         }
-        
-        // Update hearts
+        UpdateHearts();
+    }
+
+    private void UpdateHearts()
+    {
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < health)
@@ -58,7 +57,6 @@ public class PlayerStats : MonoBehaviour
     private void PlayerDied()
     {
         Destroy(gameObject);
-        //Display highscore?
-        //
+        MenuManager.YouDied();
     }
 }
