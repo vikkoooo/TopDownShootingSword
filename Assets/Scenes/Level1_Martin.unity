@@ -9381,7 +9381,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d306c76111c897a4188599c36649be84, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.174
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24527,19 +24527,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
       propertyPath: sounds.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
       propertyPath: sounds.Array.data[6].clip
       value: 
-      objectReference: {fileID: 8300000, guid: d306c76111c897a4188599c36649be84, type: 3}
+      objectReference: {fileID: 8300000, guid: 40fc7c30fd666f14fa02e387c0dd3735, type: 3}
     - target: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
       propertyPath: sounds.Array.data[6].loop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
       propertyPath: sounds.Array.data[6].name
-      value: Bgtest
+      value: ArpLoop
       objectReference: {fileID: 0}
     - target: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
       propertyPath: sounds.Array.data[6].pitch
@@ -24547,11 +24547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
       propertyPath: sounds.Array.data[6].volume
-      value: 0.396
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 6167637011209915998, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}
       propertyPath: sounds.Array.data[6].playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a8cd0ea417ffb44f8cb193f201778d6, type: 3}

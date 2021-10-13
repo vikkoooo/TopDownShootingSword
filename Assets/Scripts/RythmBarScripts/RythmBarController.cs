@@ -30,7 +30,6 @@ public class RythmBarController : MonoBehaviour
         
         numberToHit = 4;
         
-        
         scoreObj = GameObject.Find("ScoreObject");
         s = scoreObj.GetComponent<Score>();
         s.PlayerScore += 0;
