@@ -16,7 +16,7 @@ public class MenuPause : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown("Escape"))
+		if (Input.GetKeyDown("escape"))
 		{
 			if (paused == true)
 			{
