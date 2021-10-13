@@ -19,6 +19,8 @@ public class SwordScript : MonoBehaviour
     {
         if (collidedObject.CompareTag("Player"))
         {
+            CinemachineShake.Instance.ShakeCamera(5f, .2f);
+            
             Destroy(gameObject.GetComponent<Collider2D>());
             Instantiate (minigame, location.transform);
             
