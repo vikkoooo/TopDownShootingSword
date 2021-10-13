@@ -53,6 +53,9 @@ TagManager:
   - name: Wall_bush
     uniqueID: 921426997
     locked: 0
+  - name: Assets
+    uniqueID: 446062425
+    locked: 0
   - name: EnemySprites
     uniqueID: 3279249855
     locked: 0
