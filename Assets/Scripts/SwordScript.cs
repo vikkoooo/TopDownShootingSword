@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,13 @@ public class SwordScript : MonoBehaviour
         {
             Destroy(gameObject.GetComponent<Collider2D>());
             Instantiate (minigame, location.transform);
+            
+            StartCoroutine(DelayDestroy());
+            IEnumerator DelayDestroy()
+            {
+                yield return new WaitForSeconds(4);
+                Destroy(gameObject);
+            }
         }    
     }
 }
