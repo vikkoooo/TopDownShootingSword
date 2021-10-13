@@ -52,3 +52,9 @@ TagManager:
   - name: BehindableObjects
     uniqueID: 3165538751
     locked: 0
+  - name: Ground_grass-dark
+    uniqueID: 3285879541
+    locked: 0
+  - name: Wall_bush
+    uniqueID: 921426997
+    locked: 0
