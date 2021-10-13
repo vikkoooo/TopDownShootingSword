@@ -77,9 +77,9 @@ public class EnemyController : MonoBehaviour
             yield return new WaitForSeconds(2);
             
             // call on death drop
+            
             GameObject drop = Instantiate(drops[Random.Range(0, drops.Length)]);
             drop.transform.position = this.transform.position;
-            
             Destroy(gameObject);
         }
     }
