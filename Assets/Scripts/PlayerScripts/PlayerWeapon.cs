@@ -68,6 +68,8 @@ public class PlayerWeapon : MonoBehaviour
 			IEnumerator AddForceToObject()
 			{
 				yield return new WaitForSeconds(0.15f);
+				CinemachineShake.Instance.ShakeCamera(2f, .2f);
+
 				rb.AddForce(attackDirection.normalized * weaponPushBack, (ForceMode2D)ForceMode.Impulse);
 				FindObjectOfType<AudioManager>().Play("KnockBack");
 			}
