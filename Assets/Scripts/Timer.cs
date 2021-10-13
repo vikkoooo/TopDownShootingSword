@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -22,6 +23,7 @@ public class Timer : MonoBehaviour
         {
             timeEnded = true;
             timeValue = 0;
+            MenuManager.YouDied();
         }
         DisplayTime(timeValue);
     }
