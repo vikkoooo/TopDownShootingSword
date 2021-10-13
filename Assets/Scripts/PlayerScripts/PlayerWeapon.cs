@@ -10,7 +10,7 @@ public class PlayerWeapon : MonoBehaviour
 	private float timeSinceLastAttack;
 	[SerializeField] private float timeBetweenAttack = 0.8f; // How much should you be able to spam? Animation needs to finish almost?
 	[SerializeField] private float attackDuration = 1f; // For how long will the trigger be visible? Prefer to sync with animation
-	[SerializeField] private float weaponPushBack = 69f;
+	[SerializeField] private float weaponPushBack = 10f;
 
 	public GameObject colliderObject; // The collider used
 	private int damage = 25;
@@ -35,7 +35,6 @@ public class PlayerWeapon : MonoBehaviour
 		if (timeSinceLastAttack >= timeBetweenAttack)
 		{
 			colliderObject.SetActive(true); // Activate the collider
-			Debug.Log("Weapon swing started");
 
 			timeSinceLastAttack = 0f;
 			StartCoroutine(CheckMiss(attackDuration)); // Start timer to deactivate the collider in case of miss
@@ -53,7 +52,6 @@ public class PlayerWeapon : MonoBehaviour
 		if (colliderObject.activeSelf)
 		{
 			colliderObject.SetActive(false);
-			Debug.Log("Weapon swing missed");
 		}
 	}
 
@@ -64,20 +62,20 @@ public class PlayerWeapon : MonoBehaviour
 		{
 			Rigidbody2D rb = collidedObject.GetComponent<Rigidbody2D>();
 			Vector2 attackDirection = rb.transform.position - transform.position;
-			rb.velocity = Vector2.zero;
+	
 			
 			StartCoroutine(AddForceToObject());
 			IEnumerator AddForceToObject()
 			{
-				yield return new WaitForSeconds(0.3f);
-				rb.AddForce(attackDirection.normalized * (weaponPushBack * 100), ForceMode2D.Force);
+				yield return new WaitForSeconds(0.15f);
+				rb.AddForce(attackDirection.normalized * weaponPushBack, (ForceMode2D)ForceMode.Impulse);
+				FindObjectOfType<AudioManager>().Play("KnockBack");
 			}
 			
 			// collidedObject.GetComponent<EnemyTakeDamageKeepScore>().TakeDamage(damage);
 			collidedObject.GetComponent<EnemyController>().TakeDamage(damage);
 
 			colliderObject.SetActive(false);
-			Debug.Log("Weapon swing hit. Damage to monster");
 
 			// Reset time between attack
 			timeSinceLastAttack = 0f;

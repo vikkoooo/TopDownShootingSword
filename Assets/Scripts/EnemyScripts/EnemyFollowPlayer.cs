@@ -20,8 +20,7 @@ public class EnemyFollowPlayer : MonoBehaviour
 
         Vector3 velocity = moveDirection * moveSpeed;
         rb.velocity = new Vector3 (velocity.x, velocity.y, velocity.z);
-
-        /*transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);*/
+        
         
     }
 }

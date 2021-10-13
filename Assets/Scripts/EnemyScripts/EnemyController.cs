@@ -1,12 +1,18 @@
+using System;
 using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
     public Animator anim;
     private Rigidbody2D rb;
     private bool isWalking;
-    
+
+    [SerializeField]
+    private float waitFollowOnHit;
+    private EnemyFollowPlayer followPlayerScript;
     // For the score
     private GameObject scoreObj;
     private Score s;
@@ -22,6 +28,7 @@ public class EnemyController : MonoBehaviour
     {
         anim = anim.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        followPlayerScript = GetComponent<EnemyFollowPlayer>();
         scoreObj = GameObject.Find("ScoreObject");
         s = scoreObj.GetComponent<Score>();
         s.PlayerScore += 0;
@@ -40,33 +47,55 @@ public class EnemyController : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
         anim.SetFloat("yVel", rb.velocity.y);
         anim.SetFloat("xVel", rb.velocity.x);
+
+        Debug.Log("Enemy health" + health);
     }
     
     private void OnCollisionEnter2D(Collision2D collidedObject)
     {
+        
         if (collidedObject.gameObject.CompareTag("Player"))
         {
             collidedObject.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
-        }    
+        }
     }
-    
     public void TakeDamage(int amount)
     {
         health -= amount;
         GetComponentInChildren<FlashSprite>().StartFlash();
+        rb.velocity = Vector2.zero;
         
+
         if (health <= 0)
         {
             EnemyDeath();
         }
+        else
+        {
+            PausFollowPlayer();
+        }
     }
+    
+    private void PausFollowPlayer(){
+        
+        StartCoroutine(DeactivateFollowPlayer());
+        IEnumerator DeactivateFollowPlayer()
+        {
+            isWalking = false;
+            followPlayerScript.enabled = false;
+            yield return new WaitForSeconds(waitFollowOnHit);                
+            followPlayerScript.enabled = true;
+        }
+    }
+    
     private void EnemyDeath()
     {
-        Destroy(GetComponent<EnemyFollowPlayer>());
+        rb.Sleep();
+        rb.isKinematic = true;
         Destroy(GetComponent<EnemyKnightAttack>());
         Destroy(GetComponent<BoxCollider2D>());
+        Destroy(followPlayerScript);
         
-        rb.isKinematic = true;
         anim.SetBool("isAttacking", false);
         anim.SetTrigger("enemyDied");
         
@@ -78,7 +107,6 @@ public class EnemyController : MonoBehaviour
             yield return new WaitForSeconds(2);
             
             // call on death drop
-            
             GameObject drop = Instantiate(drops[Random.Range(0, drops.Length)]);
             drop.transform.position = this.transform.position;
             Destroy(gameObject);

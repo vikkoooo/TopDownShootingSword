@@ -43,4 +43,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09500c61efadb614fb2637908fe02014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: PlayerWalk
+    clip: {fileID: 8300000, guid: 6731fe36a3ccbb8458546d969a8f1aca, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: PlayerSwing
+    clip: {fileID: 8300000, guid: 385f634648ccb7042a720476b75463f3, type: 3}
+    volume: 0.46
+    pitch: 1.64
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Notehit
+    clip: {fileID: 8300000, guid: e93665c4acc37fe44a334f29d462429f, type: 3}
+    volume: 0.644
+    pitch: 2.36
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: DingNote
+    clip: {fileID: 8300000, guid: d92868e11bf94e044abfae7af16c6f66, type: 3}
+    volume: 0.644
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: DingPickup
+    clip: {fileID: 8300000, guid: e1fd02ac740b12a488ad989c24e441b1, type: 3}
+    volume: 0.644
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: KnockBack
+    clip: {fileID: 8300000, guid: dd24f3161c9bc2c478e849f3cc995d6b, type: 3}
+    volume: 0.488
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}

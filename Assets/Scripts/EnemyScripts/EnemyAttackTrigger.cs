@@ -11,8 +11,8 @@ public class EnemyAttackTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             GetComponentInParent<EnemyKnightAttack>().enabled = true;
+            
+            Destroy(GetComponent<CircleCollider2D>());
         }
     }
 }
-
-

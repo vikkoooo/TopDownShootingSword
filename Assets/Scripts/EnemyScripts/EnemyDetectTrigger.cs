@@ -10,6 +10,8 @@ public class EnemyDetectTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             GetComponentInParent<EnemyFollowPlayer>().enabled = true;
+            
+            Destroy(GetComponent<CircleCollider2D>());
         }
     }
 }

@@ -10,6 +10,8 @@ TagManager:
   - Minigame
   - MinigameLocation
   - Drop
+  - Undefined
+  - PlayerSword
   layers:
   - Default
   - TransparentFX
