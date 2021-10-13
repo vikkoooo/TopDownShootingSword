@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     private float inputVertical;
     private bool inputAttack;
     private bool inputDash;
+    
+    private GameObject scoreObj;
+    private Score s;
 
     public bool isWalking;
     
@@ -36,7 +39,9 @@ public class PlayerController : MonoBehaviour
         audioManager =  GameObject.Find("AudioManager").GetComponent<AudioManager>();
         playerBody = GetComponent<Rigidbody2D>();
         playerSwordScript = GetComponent<PlayerWeapon>();
-        
+        scoreObj = GameObject.Find("ScoreObject");
+        s = scoreObj.GetComponent<Score>();
+        s.PlayerScore += 0;
     }
     private void Update()
     {
@@ -93,5 +98,14 @@ public class PlayerController : MonoBehaviour
     {
         // audioManager.Play("PlayerWalk");
         playerBody.velocity = new Vector2(inputHorizontal * playerMoveSpeed, inputVertical * playerMoveSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Drop"))
+        {
+            s.PlayerScore += 10;
+            Destroy(other.gameObject);
+        }
     }
 }

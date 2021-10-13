@@ -452,6 +452,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 6439302166789308503}
+  drops:
+  - {fileID: 5714942620494492319, guid: 3688b12abcfcff045abf09f2ee523dca, type: 3}
+  - {fileID: 6889880001652903483, guid: 991aa5afdc807604dae0172cfb7c2f13, type: 3}
 --- !u!114 &6439302167498401605
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -16,6 +14,10 @@ public class EnemyController : MonoBehaviour
     // Stats
     private int health = 100;
     private int damage = 1;
+    
+    // For the enemy drop
+    public GameObject[] drops;
+    
     private void Start()
     {
         anim = anim.GetComponent<Animator>();
@@ -44,7 +46,6 @@ public class EnemyController : MonoBehaviour
     {
         if (collidedObject.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collision, player takes damage from monster");
             collidedObject.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
         }    
     }
@@ -61,8 +62,6 @@ public class EnemyController : MonoBehaviour
     }
     private void EnemyDeath()
     {
-        Debug.Log("Monster died");
-        
         Destroy(GetComponent<EnemyFollowPlayer>());
         Destroy(GetComponent<EnemyKnightAttack>());
 
@@ -75,6 +74,11 @@ public class EnemyController : MonoBehaviour
         IEnumerator DelayDeath()
         {
             yield return new WaitForSeconds(2);
+            
+            // call on death drop
+            GameObject drop = Instantiate(drops[Random.Range(0, drops.Length)]);
+            drop.transform.position = this.transform.position;
+            
             Destroy(gameObject);
         }
     }
