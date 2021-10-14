@@ -63,10 +63,11 @@ public class RythmBarController : MonoBehaviour
     }
     void Win()
     {
-        Score.PlayerScore += 50;
+        Score.PlayerScore += 5000;
         FindObjectOfType<AudioManager>().Play("DingPickup");
         Destroy(gameObject);
         player.GetComponent<PlayerStats>().Heal(1);
+        player.GetComponent<PlayerController>().ShowTextPopUp("5000");
     }
 
     void Lose()
