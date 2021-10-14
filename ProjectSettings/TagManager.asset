@@ -64,11 +64,14 @@ TagManager:
   - name: EnemySprites
     uniqueID: 3279249855
     locked: 0
-  - name: Assets
+  - name: Stones
     uniqueID: 446062425
     locked: 0
   - name: Player
     uniqueID: 2657839375
+    locked: 0
+  - name: Stubbe
+    uniqueID: 1257406347
     locked: 0
   - name: Pickups
     uniqueID: 4219146733
