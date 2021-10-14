@@ -52,14 +52,23 @@ TagManager:
   - name: Ground_grass-dark
     uniqueID: 3285879541
     locked: 0
+  - name: Grass-details
+    uniqueID: 2020726591
+    locked: 0
   - name: Wall_bush
     uniqueID: 921426997
     locked: 0
-  - name: Assets
-    uniqueID: 446062425
+  - name: Swords
+    uniqueID: 3104390673
     locked: 0
   - name: EnemySprites
     uniqueID: 3279249855
+    locked: 0
+  - name: Player
+    uniqueID: 2657839375
+    locked: 0
+  - name: Assets
+    uniqueID: 446062425
     locked: 0
   - name: BehindableObjects
     uniqueID: 3165538751
