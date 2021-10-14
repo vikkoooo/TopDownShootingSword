@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8317157601976176710}
   - component: {fileID: 613303348035884278}
-  - component: {fileID: 820905688404811625}
-  - component: {fileID: 6290384136887720266}
+  - component: {fileID: 2838552223422591527}
   m_Layer: 0
   m_Name: ass-pine-1
   m_TagString: Untagged
@@ -71,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1129428545
-  m_SortingLayer: 2
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4376fcbe333ff9247a887c00b3e3d145, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &820905688404811625
-PolygonCollider2D:
+--- !u!61 &2838552223422591527
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -97,7 +96,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.028339863, y: -2.2742858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,31 +106,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.00866437, y: -2.5079615}
-      - {x: 0.39778805, y: -2.1634374}
-      - {x: 0.21671462, y: -1.4491446}
-      - {x: -0.5106919, y: -1.428775}
-      - {x: -0.4401753, y: -2.149891}
---- !u!50 &6290384136887720266
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761994713708867639}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  serializedVersion: 2
+  m_Size: {x: 1.0863357, y: 1.4500589}
+  m_EdgeRadius: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2468727868135496163}
   - component: {fileID: 2468727868135496160}
-  - component: {fileID: 1955404003336500502}
   - component: {fileID: 2622084216619057251}
   m_Layer: 0
   m_Name: ass-pine-3
@@ -84,27 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &1955404003336500502
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2468727868135496161}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!60 &2622084216619057251
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -130,7 +108,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5926407, y: -2.489429}
-      - {x: -0.37067413, y: -1.6478271}
-      - {x: 0.37717682, y: -1.6651468}
-      - {x: 0.5027121, y: -2.4841473}
+    - - {x: -0.68868715, y: -2.8212314}
+      - {x: -0.3008194, y: -1.5867081}
+      - {x: 0.32478577, y: -1.5865641}
+      - {x: 0.6336859, y: -2.8159497}

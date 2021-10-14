@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu_Start.unity
+    path: Assets/Scenes/Game Scenes/Menu_Start.unity
     guid: 355d179d4e28328469805dbe8d740321
   - enabled: 1
-    path: Assets/Scenes/Menu_YouDied.unity
-    guid: 1e7d9898ed3884648b95ea6b98b97920
+    path: Assets/Scenes/Game Scenes/Level1_COMPLETE.unity
+    guid: b1b137f0684caa5469174d8fbcdffca6
   - enabled: 1
-    path: Assets/Scenes/Viktors_Arbetsscen.unity
-    guid: dd52bde84f8ad42498541a33b2b42741
+    path: Assets/Scenes/Game Scenes/Menu_YouDied.unity
+    guid: 1e7d9898ed3884648b95ea6b98b97920
   m_configObjects: {}

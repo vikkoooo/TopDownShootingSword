@@ -23,7 +23,6 @@ public class MenuManager : MonoBehaviour
     // Play
     public static void Play()
     {
-        SceneManager.LoadScene("Viktors_Arbetsscen");
+        SceneManager.LoadScene("Level1_COMPLETE");
     }
-
 }

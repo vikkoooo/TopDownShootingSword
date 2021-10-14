@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 502385617404100658}
   - component: {fileID: 502385617404100669}
   - component: {fileID: 4396780166427405952}
-  - component: {fileID: 6755975478139968001}
+  - component: {fileID: 4595529825918468063}
   m_Layer: 0
   m_Name: ass-rock-3
   m_TagString: Untagged
@@ -105,8 +105,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!60 &6755975478139968001
-PolygonCollider2D:
+--- !u!61 &4595529825918468063
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,7 +118,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03330803, y: 0.040993214}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -128,9 +128,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.70079225, y: -0.29415438}
-      - {x: 0.75804, y: -0.3260652}
-      - {x: 0.8180104, y: 0.6052627}
-      - {x: -0.68480486, y: 0.6373487}
+  serializedVersion: 2
+  m_Size: {x: 1.5971642, y: 1.0647764}
+  m_EdgeRadius: 0

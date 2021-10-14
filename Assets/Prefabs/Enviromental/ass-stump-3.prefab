@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4985083923407272163}
   - component: {fileID: 4985083923407272164}
   - component: {fileID: 4985083923407272161}
-  - component: {fileID: 4985083923407272162}
+  - component: {fileID: 186730918537449243}
   m_Layer: 0
   m_Name: ass-stump-3
   m_TagString: Untagged
@@ -105,8 +105,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!60 &4985083923407272162
-PolygonCollider2D:
+--- !u!61 &186730918537449243
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,7 +118,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014099121, y: -0.36666107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -128,9 +128,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.3664984, y: 0.636261}
-      - {x: -0.22721618, y: -0.058019698}
-      - {x: 0.19004881, y: -0.082113326}
-      - {x: 0.33169737, y: 0.60039186}
+  serializedVersion: 2
+  m_Size: {x: 0.73605347, y: 0.42581177}
+  m_EdgeRadius: 0
