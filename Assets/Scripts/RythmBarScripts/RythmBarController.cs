@@ -12,12 +12,12 @@ public class RythmBarController : MonoBehaviour
     // public InstancePrefab dotSpawner;
 
     
-    public int allowedMisses = 3;
-    
+    private int allowedMisses = 3;
+    private int numberToHit = 4;
+
     [HideInInspector] public int numberOfHits;
     [HideInInspector] public int numberOfMisses;
-    
-    private int numberToHit;
+
     
     // private GameObject scoreObj;
     // private Score s;
@@ -27,8 +27,6 @@ public class RythmBarController : MonoBehaviour
     private void Start()
     {
         sliderToPlay = rythmBarController.GetComponent<TriggerSlider>();
-        
-        numberToHit = 4;
         
         // scoreObj = GameObject.Find("ScoreObject");
         // s = scoreObj.GetComponent<Score>();
@@ -45,12 +43,21 @@ public class RythmBarController : MonoBehaviour
     
     private void Update()
     {
-        if (numberOfHits == numberToHit)
+        if (numberOfHits >= numberToHit)
         {
+            Debug.Log("win");
             Win();
         }
         if (numberOfMisses >= allowedMisses)
         {
+            Debug.Log("lose");
+
+            Lose();
+        }
+        if ((numberOfHits + numberOfMisses) >= 5)
+        {
+            Debug.Log("ny lose");
+
             Lose();
         }
     }
@@ -66,6 +73,7 @@ public class RythmBarController : MonoBehaviour
     {
         player.GetComponent<PlayerStats>().TakeDamage(damage);
         Destroy(gameObject);
+        
 
         //set back player state
         //Deactivate rythmbar
