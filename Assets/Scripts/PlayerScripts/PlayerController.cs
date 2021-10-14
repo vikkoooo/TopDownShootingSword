@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     private PlayerWeapon playerSwordScript;
     public GameObject textPopUpPrefab;
+    private AudioSource audioSrc;
     
 
     [SerializeField] private float playerMoveSpeed = 10f;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private string text;
     private void Start()
     {
+        audioSrc = GetComponent<AudioSource>();
         cam = Camera.main;
         audioManager =  GameObject.Find("AudioManager").GetComponent<AudioManager>();
         playerBody = GetComponent<Rigidbody2D>();
@@ -59,10 +61,15 @@ public class PlayerController : MonoBehaviour
         if (inputHorizontal!= 0 || inputVertical !=0)
         {
             isWalking = true;
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+            }
         }
         else
         {
             isWalking = false;
+            audioSrc.Stop();
         }
 
         if (isWalking)
@@ -104,7 +111,7 @@ public class PlayerController : MonoBehaviour
     
     private void Move()
     {
-        // audioManager.Play("PlayerWalk");
+        
         playerBody.velocity = new Vector2(inputHorizontal * playerMoveSpeed, inputVertical * playerMoveSpeed);
     }
 
