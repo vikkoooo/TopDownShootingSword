@@ -2724,7 +2724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99eecd5091ec8541836f122f5d148e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerScore: 0
   textElement: {fileID: 221373552}
 --- !u!114 &221373552
 MonoBehaviour:
@@ -6002,7 +6001,7 @@ GameObject:
   - component: {fileID: 439283339}
   - component: {fileID: 439283338}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MainMenuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6040,7 +6039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.79607844, g: 0.6039216, b: 0.050980393, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6048,19 +6047,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 39616d80a7d002348926c3ce0faa55a5, type: 3}
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 8
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Go to main menu
+  m_Text: Main Menu
 --- !u!222 &439283339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7586,7 +7585,7 @@ GameObject:
   - component: {fileID: 552654116}
   - component: {fileID: 552654115}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ResumeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7624,7 +7623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.79607844, g: 0.6039216, b: 0.050980393, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7632,12 +7631,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 39616d80a7d002348926c3ce0faa55a5, type: 3}
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 108
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -11709,8 +11708,9 @@ GameObject:
   - component: {fileID: 947848074}
   - component: {fileID: 947848073}
   - component: {fileID: 947848072}
+  - component: {fileID: 947848075}
   m_Layer: 5
-  m_Name: Resume
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11733,7 +11733,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.7, y: 77.76294}
+  m_AnchoredPosition: {x: 12.999988, y: 136.26294}
   m_SizeDelta: {x: 503.8622, y: 94.4742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947848072
@@ -11780,7 +11780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1472694749}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuPause, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -11805,7 +11805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11830,6 +11830,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947848070}
   m_CullTransparentMesh: 1
+--- !u!114 &947848075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947848070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f4641947af20f43b22d04d1ec09c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &948150123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15556,8 +15568,9 @@ GameObject:
   - component: {fileID: 1198500560}
   - component: {fileID: 1198500559}
   - component: {fileID: 1198500558}
+  - component: {fileID: 1198500561}
   m_Layer: 5
-  m_Name: Main menu
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15580,7 +15593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.7, y: -54.5}
+  m_AnchoredPosition: {x: 13, y: 4}
   m_SizeDelta: {x: 503.8622, y: 94.4742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198500558
@@ -15639,7 +15652,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1472694749}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuPause, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -15664,7 +15677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15689,6 +15702,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198500556}
   m_CullTransparentMesh: 1
+--- !u!114 &1198500561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198500556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f4641947af20f43b22d04d1ec09c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1198525893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18773,12 +18798,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472694748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1787204946}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1475884317
 PrefabInstance:
@@ -21276,7 +21301,7 @@ GameObject:
   - component: {fileID: 1677941179}
   - component: {fileID: 1677941178}
   m_Layer: 5
-  m_Name: White Tint
+  m_Name: Black tint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21314,7 +21339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22325,6 +22350,8 @@ RectTransform:
   - {fileID: 457365862}
   - {fileID: 2052808279}
   - {fileID: 1554480045}
+  - {fileID: 1891395330}
+  - {fileID: 1472694750}
   - {fileID: 2067256068}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -23933,12 +23960,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891395328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1787204946}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1892914667 stripped
 Transform:
@@ -25638,8 +25665,9 @@ GameObject:
   - component: {fileID: 2008494205}
   - component: {fileID: 2008494204}
   - component: {fileID: 2008494203}
+  - component: {fileID: 2008494206}
   m_Layer: 5
-  m_Name: Exit game
+  m_Name: ExitGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25662,7 +25690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.7, y: -191.7}
+  m_AnchoredPosition: {x: 12.999988, y: -133.2}
   m_SizeDelta: {x: 503.8622, y: 94.4742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008494203
@@ -25734,7 +25762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25759,6 +25787,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008494201}
   m_CullTransparentMesh: 1
+--- !u!114 &2008494206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008494201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f4641947af20f43b22d04d1ec09c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2013059156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4963579850644635049, guid: a00fe1483ea533f42b915043a0dbdbdf, type: 3}
@@ -26583,7 +26623,7 @@ RectTransform:
   - {fileID: 1198500557}
   - {fileID: 2008494202}
   m_Father: {fileID: 1787204946}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -26754,7 +26794,7 @@ GameObject:
   - component: {fileID: 2097819114}
   - component: {fileID: 2097819113}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ExitGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26792,7 +26832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.79607844, g: 0.6039216, b: 0.050980393, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -26800,19 +26840,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 39616d80a7d002348926c3ce0faa55a5, type: 3}
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 8
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit game
+  m_Text: Exit Game
 --- !u!222 &2097819114
 CanvasRenderer:
   m_ObjectHideFlags: 0
