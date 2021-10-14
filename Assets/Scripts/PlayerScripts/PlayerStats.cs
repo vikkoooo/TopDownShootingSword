@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     // Health currently set to 4.
-    private int health = 4;
+    private int health = 10;
     
     // This means the array of hearts should contain 4 objects and should be of size 4
     public Image[] hearts;
@@ -28,8 +28,21 @@ public class PlayerStats : MonoBehaviour
         CheckHealth(); // Updates UI and checks for death
     }
 
+    public void Heal(int amount)
+    {
+        health += amount;
+        CheckHealth();
+    }
+
     private void CheckHealth()
     {
+        // Overload check
+        if (health > hearts.Length)
+        {
+            health = hearts.Length;
+            UpdateHearts();
+        }
+        
         // In case if player should die, health reaches 0 or below
         if (health <= 0)
         {

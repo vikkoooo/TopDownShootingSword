@@ -56,21 +56,16 @@ public class RythmBarController : MonoBehaviour
     }
     void Win()
     {
-
         Score.PlayerScore += 50;
         FindObjectOfType<AudioManager>().Play("DingPickup");
         Destroy(gameObject);
-        Debug.Log("You win");
-        //Destroy Sword
-        //Add score
-        //add attackpower to Player
+        player.GetComponent<PlayerStats>().Heal(1);
     }
 
     void Lose()
     {
         player.GetComponent<PlayerStats>().TakeDamage(damage);
         Destroy(gameObject);
-        Debug.Log("You lose");
 
         //set back player state
         //Deactivate rythmbar
