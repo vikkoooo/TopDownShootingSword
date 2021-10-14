@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-
     // Menu
     public static void Menu()
     {
@@ -22,11 +22,6 @@ public class MenuManager : MonoBehaviour
     
     // Play
     public static void Play()
-    {
-        SceneManager.LoadScene("Viktors_Arbetsscen");
-    }
-
-    public static void Restart()
     {
         SceneManager.LoadScene("Viktors_Arbetsscen");
     }

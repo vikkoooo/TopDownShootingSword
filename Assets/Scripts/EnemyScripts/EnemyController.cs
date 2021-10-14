@@ -14,8 +14,8 @@ public class EnemyController : MonoBehaviour
     private float waitFollowOnHit;
     private EnemyFollowPlayer followPlayerScript;
     // For the score
-    private GameObject scoreObj;
-    private Score s;
+    // private GameObject scoreObj;
+    // private Score s;
     private PlayerController playerController;
     
     // Stats
@@ -30,9 +30,9 @@ public class EnemyController : MonoBehaviour
         anim = anim.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         followPlayerScript = GetComponent<EnemyFollowPlayer>();
-        scoreObj = GameObject.Find("ScoreObject");
-        s = scoreObj.GetComponent<Score>();
-        s.PlayerScore += 0;
+        // scoreObj = GameObject.Find("ScoreObject");
+        // s = scoreObj.GetComponent<Score>();
+        // s.PlayerScore += 0;
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
     void Update()
@@ -106,7 +106,7 @@ public class EnemyController : MonoBehaviour
         anim.SetTrigger("enemyDied");
         
         playerController.ShowTextPopUp("100");
-        s.PlayerScore += 100;
+        Score.PlayerScore += 100;
         
         StartCoroutine(DelayDeath());
         IEnumerator DelayDeath()

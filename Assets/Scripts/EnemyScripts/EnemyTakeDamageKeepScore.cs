@@ -14,15 +14,15 @@ public class EnemyTakeDamageKeepScore : MonoBehaviour
     //private float moveSpeed = 0.5f;
     
     // For the score
-    private GameObject scoreObj;
-    private Score s;
+    // private GameObject scoreObj;
+    // private Score s;
 
     
     private void Start()
     {
-        scoreObj = GameObject.Find("ScoreObject");
-        s = scoreObj.GetComponent<Score>();
-        s.PlayerScore += 0;
+        // scoreObj = GameObject.Find("ScoreObject");
+        // s = scoreObj.GetComponent<Score>();
+        // s.PlayerScore += 0;
     }
     
     public void TakeDamage(int amount)
@@ -34,7 +34,7 @@ public class EnemyTakeDamageKeepScore : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Monster died");
-            s.PlayerScore += 1;
+            Score.PlayerScore += 1;
         }
     }
     private void OnCollisionEnter2D(Collision2D collidedObject)

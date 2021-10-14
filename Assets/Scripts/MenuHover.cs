@@ -11,6 +11,7 @@ public class MenuHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
  
     public void OnPointerExit(PointerEventData eventData)
     {
+        // Hexadecimal: CB9A0D
         this.GetComponentInChildren<Text>().color = new Color(0.7960785f, 0.6039216f, 0.0509804f, 1);
     }
 }

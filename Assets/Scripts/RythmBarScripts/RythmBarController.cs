@@ -19,8 +19,8 @@ public class RythmBarController : MonoBehaviour
     
     private int numberToHit;
     
-    private GameObject scoreObj;
-    private Score s;
+    // private GameObject scoreObj;
+    // private Score s;
     private GameObject player;
     private int damage = 1;
     
@@ -30,9 +30,9 @@ public class RythmBarController : MonoBehaviour
         
         numberToHit = 4;
         
-        scoreObj = GameObject.Find("ScoreObject");
-        s = scoreObj.GetComponent<Score>();
-        s.PlayerScore += 0;
+        // scoreObj = GameObject.Find("ScoreObject");
+        // s = scoreObj.GetComponent<Score>();
+        // s.PlayerScore += 0;
         player = GameObject.FindWithTag("Player");
 
         StartCoroutine(Delay());
@@ -57,7 +57,7 @@ public class RythmBarController : MonoBehaviour
     void Win()
     {
 
-        s.PlayerScore += 5;
+        Score.PlayerScore += 50;
         FindObjectOfType<AudioManager>().Play("DingPickup");
         Destroy(gameObject);
         Debug.Log("You win");

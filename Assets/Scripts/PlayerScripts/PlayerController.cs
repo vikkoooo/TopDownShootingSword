@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     private bool inputAttack;
     private bool inputDash;
     
-    private GameObject scoreObj;
-    private Score s;
+    // private GameObject scoreObj;
+    // private Score s;
 
     public bool isWalking;
     
@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour
         audioManager =  GameObject.Find("AudioManager").GetComponent<AudioManager>();
         playerBody = GetComponent<Rigidbody2D>();
         playerSwordScript = GetComponent<PlayerWeapon>();
-        scoreObj = GameObject.Find("ScoreObject");
-        s = scoreObj.GetComponent<Score>();
-        s.PlayerScore += 0;
+        // scoreObj = GameObject.Find("ScoreObject");
+        // s = scoreObj.GetComponent<Score>();
+        // s.PlayerScore += 0;
     }
     private void Update()
     {
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             ShowTextPopUp("10");
             audioManager.Play("DingNote");
-            s.PlayerScore += 10;
+            Score.PlayerScore += 100;
             Destroy(other.gameObject);
         }
     }
