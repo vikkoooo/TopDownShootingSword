@@ -8,17 +8,25 @@ public class EnemySpawner : MonoBehaviour
 {
 	public GameObject[] monsters;
 	private int n_monsters_per_area = 2;
-	
-    public GameObject area1;
+	private int seconds;
+
+	public GameObject area1;
     public GameObject area2;
     public GameObject area3;
     public GameObject area4;
     public GameObject area5;
+    public GameObject area6;
+    public GameObject area7;
+    public GameObject area8;
+
     private BoxCollider2D area1_collider;
     private BoxCollider2D area2_collider;
     private BoxCollider2D area3_collider;
     private BoxCollider2D area4_collider;
     private BoxCollider2D area5_collider;
+    private BoxCollider2D area6_collider;
+    private BoxCollider2D area7_collider;
+    private BoxCollider2D area8_collider;
     
     private void Awake()
     {
@@ -27,6 +35,9 @@ public class EnemySpawner : MonoBehaviour
 	    area3_collider = area3.GetComponent<BoxCollider2D>();
 	    area4_collider = area4.GetComponent<BoxCollider2D>();
 	    area5_collider = area5.GetComponent<BoxCollider2D>();
+	    area6_collider = area5.GetComponent<BoxCollider2D>();
+	    area7_collider = area5.GetComponent<BoxCollider2D>();
+	    area8_collider = area5.GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -36,8 +47,35 @@ public class EnemySpawner : MonoBehaviour
 	    CreateMonsters(n_monsters_per_area, area3_collider);
 	    CreateMonsters(n_monsters_per_area, area4_collider);
 	    CreateMonsters(n_monsters_per_area, area5_collider);
+	    CreateMonsters(n_monsters_per_area, area6_collider);
+	    CreateMonsters(n_monsters_per_area, area7_collider);
+	    CreateMonsters(n_monsters_per_area, area8_collider);
+    }
+
+    void FixedUpdate() 
+    {
+	    StartCoroutine(IncrementSeconds());
+	    if (seconds >= 30)
+	    {
+		    CreateMonsters(n_monsters_per_area, area1_collider);
+		    CreateMonsters(n_monsters_per_area, area2_collider);
+		    CreateMonsters(n_monsters_per_area, area3_collider);
+		    CreateMonsters(n_monsters_per_area, area4_collider);
+		    CreateMonsters(n_monsters_per_area, area5_collider);
+		    CreateMonsters(n_monsters_per_area, area6_collider);
+		    CreateMonsters(n_monsters_per_area, area7_collider);
+		    CreateMonsters(n_monsters_per_area, area8_collider);
+
+		    seconds = 0;
+	    }
     }
     
+    IEnumerator IncrementSeconds() 
+    {
+	    yield return new WaitForSeconds(1);
+	    seconds++;
+    }
+
     private void CreateMonsters(int n, BoxCollider2D area)
     {
 	    for (int i = 0; i < n; i++)
