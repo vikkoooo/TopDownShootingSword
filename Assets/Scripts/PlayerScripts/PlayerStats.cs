@@ -21,7 +21,9 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int amount)
     {
         GetComponentInChildren<FlashSprite>().StartFlash();
-        
+        FindObjectOfType<AudioManager>().Play("PlayerGrunt");
+        CinemachineShake.Instance.ShakeCamera(2f, .2f);
+
         health -= amount;
         CheckHealth(); // Updates UI and checks for death
     }
