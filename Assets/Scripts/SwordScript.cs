@@ -22,8 +22,13 @@ public class SwordScript : MonoBehaviour
             CinemachineShake.Instance.ShakeCamera(2f, .2f);
             
             Destroy(gameObject.GetComponent<Collider2D>());
-            Instantiate (minigame, location.transform);
-            
+
+
+            if (!GameObject.FindWithTag("Minigame"))
+            {
+                Instantiate(minigame, location.transform);
+            }
+
             StartCoroutine(DelayDestroy());
             IEnumerator DelayDestroy()
             {
