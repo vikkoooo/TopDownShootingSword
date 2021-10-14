@@ -6,12 +6,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public float timeValue = 90;
-
     public Text timerText;
-    // Update is called once per frame
+
     void Update()
     {
         if (timeValue > 0)
@@ -36,5 +33,10 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void RewardTime(float time)
+    {
+        timeValue += time;
     }
 }

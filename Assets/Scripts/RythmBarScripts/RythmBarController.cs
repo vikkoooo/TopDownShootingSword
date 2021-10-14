@@ -45,19 +45,14 @@ public class RythmBarController : MonoBehaviour
     {
         if (numberOfHits >= numberToHit)
         {
-            Debug.Log("win");
             Win();
         }
         if (numberOfMisses >= allowedMisses)
         {
-            Debug.Log("lose");
-
             Lose();
         }
         if ((numberOfHits + numberOfMisses) >= 5)
         {
-            Debug.Log("ny lose");
-
             Lose();
         }
     }
@@ -68,6 +63,7 @@ public class RythmBarController : MonoBehaviour
         Destroy(gameObject);
         player.GetComponent<PlayerStats>().Heal(1);
         player.GetComponent<PlayerController>().ShowTextPopUp("5000");
+        GameObject.Find("Timer").GetComponent<Timer>().RewardTime(30); // reward 30 sec on win
     }
 
     void Lose()
