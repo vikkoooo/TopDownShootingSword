@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
-    private bool correctInput;
     private RythmBarController controller;
 
     private RectTransform rectTransform;
@@ -18,7 +17,6 @@ public class Note : MonoBehaviour
         controller = GameObject.FindWithTag("Minigame").GetComponent<RythmBarController>();
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
-        correctInput = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
