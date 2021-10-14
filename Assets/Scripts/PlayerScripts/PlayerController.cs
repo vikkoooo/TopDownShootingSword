@@ -119,9 +119,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Drop"))
         {
-            ShowTextPopUp("10");
+            ShowTextPopUp("1000");
             audioManager.Play("DingNote");
-            Score.PlayerScore += 100;
+            Score.PlayerScore += 1000;
             Destroy(other.gameObject);
         }
     }
