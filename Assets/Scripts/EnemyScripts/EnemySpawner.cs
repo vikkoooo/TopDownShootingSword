@@ -7,8 +7,11 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
 	public GameObject[] monsters;
-	private int n_monsters_per_area = 2;
-	private int seconds;
+	private int n_monsters_per_area = 3;
+	private float time;
+
+	[SerializeField]
+	private float timeToSpawn = 30f;
 
 	public GameObject area1;
     public GameObject area2;
@@ -35,13 +38,15 @@ public class EnemySpawner : MonoBehaviour
 	    area3_collider = area3.GetComponent<BoxCollider2D>();
 	    area4_collider = area4.GetComponent<BoxCollider2D>();
 	    area5_collider = area5.GetComponent<BoxCollider2D>();
-	    area6_collider = area5.GetComponent<BoxCollider2D>();
-	    area7_collider = area5.GetComponent<BoxCollider2D>();
-	    area8_collider = area5.GetComponent<BoxCollider2D>();
+	    area6_collider = area6.GetComponent<BoxCollider2D>();
+	    area7_collider = area7.GetComponent<BoxCollider2D>();
+	    area8_collider = area8.GetComponent<BoxCollider2D>();
     }
 
     void Start()
     {
+	    time = 0;
+	    
 	    CreateMonsters(n_monsters_per_area, area1_collider);
 	    CreateMonsters(n_monsters_per_area, area2_collider);
 	    CreateMonsters(n_monsters_per_area, area3_collider);
@@ -52,10 +57,11 @@ public class EnemySpawner : MonoBehaviour
 	    CreateMonsters(n_monsters_per_area, area8_collider);
     }
 
-    void FixedUpdate() 
+    private void Update()
     {
-	    StartCoroutine(IncrementSeconds());
-	    if (seconds >= 30)
+	    time += Time.deltaTime;
+
+	    if (time >= timeToSpawn)
 	    {
 		    CreateMonsters(n_monsters_per_area, area1_collider);
 		    CreateMonsters(n_monsters_per_area, area2_collider);
@@ -65,17 +71,12 @@ public class EnemySpawner : MonoBehaviour
 		    CreateMonsters(n_monsters_per_area, area6_collider);
 		    CreateMonsters(n_monsters_per_area, area7_collider);
 		    CreateMonsters(n_monsters_per_area, area8_collider);
-
-		    seconds = 0;
+		    time = 0;
 	    }
+	    
     }
     
-    IEnumerator IncrementSeconds() 
-    {
-	    yield return new WaitForSeconds(1);
-	    seconds++;
-    }
-
+    
     private void CreateMonsters(int n, BoxCollider2D area)
     {
 	    for (int i = 0; i < n; i++)
@@ -97,5 +98,7 @@ public class EnemySpawner : MonoBehaviour
 
 	    return new Vector2(x, y);
     }
-    
+
+
+
 }

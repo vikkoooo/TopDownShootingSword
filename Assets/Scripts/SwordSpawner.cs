@@ -5,19 +5,50 @@ public class SwordSpawner : MonoBehaviour
 {
 	public Sprite[] swords;
 	public GameObject swordPrefab;
-	private int n_swords = 10;
+	private int n_swordsPerArea = 2;
 	
-	public GameObject area1;
-	private BoxCollider2D area1_collider;
+	// private float time;
 
+	public GameObject area1;
+	public GameObject area2;
+	public GameObject area3;
+	public GameObject area4;
+	public GameObject area5;
+	public GameObject area6;
+	public GameObject area7;
+	public GameObject area8;
+
+	private BoxCollider2D area1_collider;
+	private BoxCollider2D area2_collider;
+	private BoxCollider2D area3_collider;
+	private BoxCollider2D area4_collider;
+	private BoxCollider2D area5_collider;
+	private BoxCollider2D area6_collider;
+	private BoxCollider2D area7_collider;
+	private BoxCollider2D area8_collider;
+	
 	private void Awake()
 	{
 		area1_collider = area1.GetComponent<BoxCollider2D>();
+		area2_collider = area2.GetComponent<BoxCollider2D>();
+		area3_collider = area3.GetComponent<BoxCollider2D>();
+		area4_collider = area4.GetComponent<BoxCollider2D>();
+		area5_collider = area5.GetComponent<BoxCollider2D>();
+		area6_collider = area6.GetComponent<BoxCollider2D>();
+		area7_collider = area7.GetComponent<BoxCollider2D>();
+		area8_collider = area8.GetComponent<BoxCollider2D>();
 	}
 
 	void Start()
 	{
-		CreateSwords(n_swords, area1_collider);
+		CreateSwords(n_swordsPerArea, area1_collider);
+		CreateSwords(n_swordsPerArea, area2_collider);
+		CreateSwords(n_swordsPerArea, area3_collider);
+		CreateSwords(n_swordsPerArea, area4_collider);
+		CreateSwords(n_swordsPerArea, area5_collider);
+		CreateSwords(n_swordsPerArea, area6_collider);
+		CreateSwords(n_swordsPerArea, area7_collider);
+		CreateSwords(n_swordsPerArea, area8_collider);
 	}
     
 	private void CreateSwords(int n, BoxCollider2D area)
