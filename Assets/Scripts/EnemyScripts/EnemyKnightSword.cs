@@ -10,7 +10,6 @@ public class EnemyKnightSword : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log($"Collision, player takes {damage} damage from monster");
             other.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
             gameObject.SetActive(false);
         }    

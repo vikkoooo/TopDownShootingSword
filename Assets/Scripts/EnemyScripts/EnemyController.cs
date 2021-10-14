@@ -50,10 +50,6 @@ public class EnemyController : MonoBehaviour
         anim.SetFloat("yVel", rb.velocity.y);
         anim.SetFloat("xVel", rb.velocity.x);
 
-        Debug.Log("Enemy health" + health);
-        
-        
-        
     }
     
     private void OnCollisionEnter2D(Collision2D collidedObject)
