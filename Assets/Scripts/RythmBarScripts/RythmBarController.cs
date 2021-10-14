@@ -15,8 +15,8 @@ public class RythmBarController : MonoBehaviour
     private int allowedMisses = 3;
     private int numberToHit = 4;
 
-    public int numberOfHits;
-    public int numberOfMisses;
+    [HideInInspector] public int numberOfHits;
+    [HideInInspector] public int numberOfMisses;
 
     
     // private GameObject scoreObj;
