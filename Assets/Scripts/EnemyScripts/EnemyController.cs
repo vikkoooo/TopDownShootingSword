@@ -62,6 +62,7 @@ public class EnemyController : MonoBehaviour
     }
     public void TakeDamage(int amount)
     {
+        FindObjectOfType<AudioManager>().Play("EnemyGrunt");
         health -= amount;
         GetComponentInChildren<FlashSprite>().StartFlash();
         rb.velocity = Vector2.zero;
@@ -91,10 +92,10 @@ public class EnemyController : MonoBehaviour
     
     private void EnemyDeath()
     {
+        Destroy(GetComponent<BoxCollider2D>());
         rb.Sleep();
         rb.isKinematic = true;
         Destroy(GetComponent<EnemyKnightAttack>());
-        Destroy(GetComponent<BoxCollider2D>());
         Destroy(followPlayerScript);
         
         
