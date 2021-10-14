@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         {
         }
 
-        if (textPopUpPrefab)
+        if (!textPopUpPrefab)
         {
             ShowTextPopUp(text);
         }
