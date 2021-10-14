@@ -71,7 +71,7 @@ public class PlayerStats : MonoBehaviour
 
     private void PlayerDied()
     {
-        Destroy(gameObject);
+        // Destroy(gameObject);
         MenuManager.YouDied();
     }
 }

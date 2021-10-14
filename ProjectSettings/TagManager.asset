@@ -64,11 +64,14 @@ TagManager:
   - name: EnemySprites
     uniqueID: 3279249855
     locked: 0
+  - name: Assets
+    uniqueID: 446062425
+    locked: 0
   - name: Player
     uniqueID: 2657839375
     locked: 0
-  - name: Assets
-    uniqueID: 446062425
+  - name: Pickups
+    uniqueID: 4219146733
     locked: 0
   - name: BehindableObjects
     uniqueID: 3165538751
