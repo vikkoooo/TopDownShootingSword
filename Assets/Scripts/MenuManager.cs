@@ -23,12 +23,12 @@ public class MenuManager : MonoBehaviour
     // Play
     public static void Play()
     {
-        SceneManager.LoadScene("Level1_Probably_Final");
+        SceneManager.LoadScene("Viktors_Arbetsscen");
     }
 
     public static void Restart()
     {
-        SceneManager.LoadScene("Level1_Probably_Final");
+        SceneManager.LoadScene("Viktors_Arbetsscen");
     }
 
 }
